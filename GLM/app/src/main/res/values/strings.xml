@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GLM</string>
+    <string name="your_dream_grocery">Your Dream Grocery</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="grocerypic">grocerypic</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="create_list">CREATE LIST</string>
+</resources>
