@@ -13,7 +13,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SQLiteDatabase db = new DBHelper(this).getWritableDatabase();
+        SQLiteDatabase ItemDatabase = new DBHelper(this).getWritableDatabase();
+        SQLiteDatabase UserListDatabase = new DBHelperForList(this).getWritableDatabase();
         super.onCreate(savedInstanceState);
         try{
             this.getSupportActionBar().hide();

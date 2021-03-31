@@ -23,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        String createTableStatement = "CREATE TABLE " + GROCERY_ITEMS_TABLE + " (" + COLUMN_ITEM + " TEXT primary key, " + COLUMN_ITEM_CATEGORY + " Text)";
+        String createTableStatement = "CREATE TABLE IF NOT EXISTS " + GROCERY_ITEMS_TABLE + " (" + COLUMN_ITEM + " TEXT primary key, " + COLUMN_ITEM_CATEGORY + " Text)";
         DB.execSQL(createTableStatement);
 
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Coca Cola', 'Beverages')");
@@ -95,6 +95,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists GROCERY_ITEMS_TABLE");
         onCreate(DB);
     }
+
     public void insertGroceryItem (String itemName, String CategoryName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -106,14 +107,14 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
-        String queryString = "UPDATE * FROM " + GROCERY_ITEMS_TABLE + " WHERE " + COLUMN_ITEM + " = " + itemName;
-        Cursor cursor = DB.rawQuery(queryString, null);
+       DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
+       // long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
         return;
     }
     public void DeleteGroceryItem (String itemName){
         SQLiteDatabase DB = this.getWritableDatabase();
         String queryString = " DELETE FROM " + GROCERY_ITEMS_TABLE + " WHERE " + COLUMN_ITEM + " = " + itemName;
-        Cursor cursor = DB.rawQuery(queryString, null);
+       Cursor cursor = DB.rawQuery(queryString, null);
         return;
     }
     public List<String> getItemsForCategory(String CategoryName){

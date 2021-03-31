@@ -2,13 +2,39 @@ Due date: April 7th 2021, Wednesday
 
 Design/ Screen deadline-  Tuesday- 03/30/2021 by 10 PM 
 
-Database (table name GroceryItems. Colums : Primary key auto incremented int, Item type, and item name. ) - deadline for the database is Thursday and polulating the database- 03/31/2021 by 12:04 pm --- done 
+**Database (table name GroceryItems. Colums : Primary key auto incremented int, Item type, and item name. ) - deadline for the database is Thursday and polulating the database- 03/31/2021 by 12:04 pm --- done** 
+
+Coding - 03/31/2021 ---- 03/04/2021 by 1:00 Am 
+
+Save - function 
+
+// add another table for list 
 
 
 
-Coding - 03/04/2021 by 1:00 Am 
 
-Debuging - 03/7/2021 by 10:00 PM
+
+Debuging - 03/04/2021 - 03/7/2021 by 10:00 PM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 **category for the item type**
 
