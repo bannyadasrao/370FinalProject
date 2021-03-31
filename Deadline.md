@@ -26,6 +26,16 @@ Debuging - 03/7/2021 by 10:00 PM
 
 > dairy - cheese, milk, yogurt, cream, butter, whipped cream 
 
+
+
+
+
+
+
+
+
+
+
 > alcohol- wine, heineken, beer, soju, tequila
 
 > cleaning products- clorox, bounty, paper towels, dish washing soap, windex, tissues, charmin, garbage bags, broom, dustpan 
