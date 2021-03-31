@@ -14,7 +14,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SQLiteDatabase db = new DBHelper(this).getWritableDatabase();
-        Button test = findViewById(R.id.button2);
         super.onCreate(savedInstanceState);
         try{
             this.getSupportActionBar().hide();
