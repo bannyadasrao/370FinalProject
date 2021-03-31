@@ -3,6 +3,7 @@ package edu.qc.seclass.glm;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,10 +21,23 @@ public class UserLists extends AppCompatActivity {
     private EditText listName;
     private Button cancel, save;
 
+    RecyclerView mylistsRecycle;
+    Button createList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_lists);
+
+        mylistsRecycle = findViewById(R.id.myitemsRecycle);
+        createList = findViewById(R.id.createList);
+        createList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(UserLists.this,createLists.class);
+                startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -45,9 +59,9 @@ public class UserLists extends AppCompatActivity {
         dialogBuilder = new AlertDialog.Builder(this);
         final View contactPopupView = getLayoutInflater().inflate(R.layout.activity_renamelist,null);
 
-        listName = (EditText) contactPopupView.findViewById(R.id.entername);
+        listName = (EditText) contactPopupView.findViewById(R.id.namefornewlist);
         cancel = (Button) contactPopupView.findViewById(R.id.cancellist);
-        save = (Button) contactPopupView.findViewById(R.id.savelist);
+        save = (Button) contactPopupView.findViewById(R.id.savecreatedlist);
 
         dialogBuilder.setView(contactPopupView);
         dialog = dialogBuilder.create();
@@ -66,5 +80,9 @@ public class UserLists extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
+    }
+    public void goMyItemsPage(View view){
+        Intent i = new Intent(this,MyItems.class);
+        startActivity(i);
     }
 }

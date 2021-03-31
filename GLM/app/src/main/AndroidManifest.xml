@@ -9,8 +9,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
-        <activity android:name=".UserLists"></activity>
-        <activity android:name=".searchItems" />
+        <activity android:name=".categoryHygiene"
+            android:label="Hygiene Category"></activity>
+        <activity android:name=".categoryLiquor"
+            android:label="Liquor Category"/>
+        <activity android:name=".categoryCleaning"
+            android:label="Cleaning Category"/>
+        <activity android:name=".categoryBeverages"
+            android:label="Beverages Category"/>
+        <activity android:name=".categorySnack"
+            android:label="Snack Category"/>
+        <activity android:name=".categoryBakery"
+            android:label="Bakery Category"/>
+        <activity android:name=".categoryVegetables"
+            android:label="Vagetables Category"/>
+        <activity android:name=".categoryDairy"
+            android:label="Dairy Category"/>
+        <activity android:name=".categoryMeat"
+            android:label="Meat Category"/>
+        <activity android:name=".categoryFruit"
+            android:label="Fruit Category"/>
+        <activity android:name=".searchItem"
+            android:label="Grocery List"/>
+        <activity
+            android:name=".MyItems"
+            android:label="Grocery List" />
+        <activity
+            android:name=".createLists"
+            android:label="Create New Lists"
+            android:parentActivityName=".UserLists" />
+        <activity
+            android:name=".UserLists"
+            android:label="Grocery List" />
         <activity android:name=".renamelist" />
         <activity android:name=".MainActivity">
             <intent-filter>

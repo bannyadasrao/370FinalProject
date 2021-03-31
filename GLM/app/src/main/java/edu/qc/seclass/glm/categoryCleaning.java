@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class searchItems extends AppCompatActivity {
+public class categoryCleaning extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search_items);
+        setContentView(R.layout.activity_category_cleaning);
     }
 }

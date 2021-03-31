@@ -17,13 +17,15 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COLUMN_ITEM = "Item";
     public static final String COLUMN_ITEM_CATEGORY = "ItemCategory";
 
+    //IF NOT EXISTS
     public DBHelper(Context context) {
         super(context, "GroceryItems.db", null, 1);
     }
     @Override
     public void onCreate(SQLiteDatabase DB) {
-       String createTableStatement = "CREATE TABLE IF NOT EXISTS " + GROCERY_ITEMS_TABLE + " (" + COLUMN_ITEM + " TEXT primary key, " + COLUMN_ITEM_CATEGORY + " Text)";
-       DB.execSQL(createTableStatement);
+        String createTableStatement = "CREATE TABLE " + GROCERY_ITEMS_TABLE + " (" + COLUMN_ITEM + " TEXT primary key, " + COLUMN_ITEM_CATEGORY + " Text)";
+        DB.execSQL(createTableStatement);
+
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Coca Cola', 'Beverages')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Tropicana Orange juice', 'Beverages')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Pepsi', 'Beverages')");
@@ -33,11 +35,6 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Lucky Charms', 'Dry Goods')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Black Beans', 'Dry Goods')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Red Beans', 'Dry Goods')");
-
-
-
-
-       /*
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Goya Beans', 'Dry Goods')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Shell Pasta', 'Dry Goods')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Bowtie Pasta', 'Dry Goods')");
@@ -90,7 +87,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Shampoo', 'Personal Care')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Conditoner', 'Personal Care')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Soap', 'Personal Care')");
-        */
+
 
     }
     @Override
@@ -111,13 +108,13 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
         String queryString = "UPDATE * FROM " + GROCERY_ITEMS_TABLE + " WHERE " + COLUMN_ITEM + " = " + itemName;
         Cursor cursor = DB.rawQuery(queryString, null);
-            return;
+        return;
     }
     public void DeleteGroceryItem (String itemName){
         SQLiteDatabase DB = this.getWritableDatabase();
         String queryString = " DELETE FROM " + GROCERY_ITEMS_TABLE + " WHERE " + COLUMN_ITEM + " = " + itemName;
         Cursor cursor = DB.rawQuery(queryString, null);
-            return;
+        return;
     }
     public List<String> getItemsForCategory(String CategoryName){
         List<String> returnList = new ArrayList<String>();
@@ -134,7 +131,7 @@ public class DBHelper extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
 
         }else{
-                // No item found under the category return nothing.
+            // No item found under the category return nothing.
         }
         return returnList;
     }
