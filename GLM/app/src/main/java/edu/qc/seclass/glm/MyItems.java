@@ -21,7 +21,10 @@ public class MyItems extends AppCompatActivity {
         Intent i = new Intent(this,UserLists.class);
         startActivity(i);
     }
-
+    public void goItemDeatilPage(View view){
+        Intent i = new Intent(this,itemDetails.class);
+        startActivity(i);
+    }
     public void goSearchItemsPage(View view){
         Intent i = new Intent(this,searchItem.class);
         startActivity(i);

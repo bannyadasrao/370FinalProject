@@ -10,7 +10,7 @@
         android:id="@+id/createList"
         android:layout_width="250dp"
         android:layout_height="70dp"
-        android:onClick="goSearchItemsPage"
+        android:onClick="goItemDeatilPage"
         android:text="@string/add_item"
         android:textSize="24sp"
         android:textStyle="bold"

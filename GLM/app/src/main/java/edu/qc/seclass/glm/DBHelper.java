@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -16,7 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String GROCERY_ITEMS_TABLE = "Grocery_Items_Table";
     public static final String COLUMN_ITEM = "Item";
     public static final String COLUMN_ITEM_CATEGORY = "ItemCategory";
-
+    private Context context;
     //IF NOT EXISTS
     public DBHelper(Context context) {
         super(context, "GroceryItems.db", null, 1);
@@ -95,13 +96,29 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists GROCERY_ITEMS_TABLE");
         onCreate(DB);
     }
-
+    /*
     public void insertGroceryItem (String itemName, String CategoryName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM, itemName);
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
         DB.insert(GROCERY_ITEMS_TABLE , null, contentValues);
+    }
+     */
+    public void insertGroceryItem(String itemName, String itemCategory){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_ITEM,itemName);
+        contentValues.put(COLUMN_ITEM_CATEGORY,itemCategory);
+
+        long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
+        if (result == -1){
+            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
+        }
+
     }
     public void UpdateCategory (String itemName, String CategoryName){
         SQLiteDatabase DB = this.getWritableDatabase();
