@@ -102,8 +102,7 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM, itemName);
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
-        DB.insert(GROCERY_ITEMS_TABLE , null, contentValues);
-        long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
+       long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
         if (result == -1){
             Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
         }
@@ -132,8 +131,15 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
-       DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
-       // long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
+       //DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
+        long result = DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
+        if (result == -1){
+            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context,"Updated Successfully!",Toast.LENGTH_SHORT).show();
+        }
+       //long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
         return;
     }
     public void DeleteGroceryItem (String itemName){
@@ -152,7 +158,7 @@ public class DBHelper extends SQLiteOpenHelper {
             do{
                 String itemName = cursor.getString(0);
                 String itemCategory = cursor.getString(1);
-                String result = itemName + " " + itemCategory + " ";
+                String result = "Item:" + itemName + " Category: " + itemCategory + " ";
                 returnList.add(result);
             }while(cursor.moveToNext());
 

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -16,6 +17,7 @@ public class DBHelperForList extends SQLiteOpenHelper {
     public static final String USER_LIST = "USER_LIST";
     public static final String COLUMN_ID = "ID";
     public static final String COLUMN_LIST_NAME = "LIST_NAME";
+    private Context context;
 
     public DBHelperForList(Context context) {
         super(context, "GroceryList.db", null, 1);
@@ -35,15 +37,28 @@ public class DBHelperForList extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_LIST_NAME, ListName);
-        DB.insert(USER_LIST , null, contentValues);
+       long result =  DB.insert(USER_LIST , null, contentValues);
+        if (result == -1){
+            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void UpdateListName(String oldListName, String newListName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_LIST_NAME, newListName);
-         DB.update(USER_LIST, contentValues, "LIST_NAME=?", new String[]{oldListName});
+       long result =   DB.update(USER_LIST, contentValues, "LIST_NAME=?", new String[]{oldListName});
         //long result =   DB.update(USER_LIST, contentValues, COLUMN_LIST_NAME, new String[]{oldListName});
+        if (result == -1){
+            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context,"Updated Successfully!",Toast.LENGTH_SHORT).show();
+        }
+
         return;
     }
 
