@@ -21,8 +21,10 @@ public class DBHelper extends SQLiteOpenHelper {
     //IF NOT EXISTS
     public DBHelper(Context context) {
         super(context, "GroceryItems.db", null, 1);
+        this.context = context;
     }
     @Override
+
     public void onCreate(SQLiteDatabase DB) {
         String createTableStatement = "CREATE TABLE IF NOT EXISTS " + GROCERY_ITEMS_TABLE + " (" + COLUMN_ITEM + " TEXT primary key, " + COLUMN_ITEM_CATEGORY + " Text)";
         DB.execSQL(createTableStatement);
@@ -134,6 +136,7 @@ public class DBHelper extends SQLiteOpenHelper {
        //DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
         long result = DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
         if (result == -1){
+            //Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
             Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
         }
         else {
@@ -142,6 +145,8 @@ public class DBHelper extends SQLiteOpenHelper {
        //long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
         return;
     }
+
+
     public void DeleteGroceryItem (String itemName){
         SQLiteDatabase DB = this.getWritableDatabase();
         String queryString = " DELETE FROM " + GROCERY_ITEMS_TABLE + " WHERE " + COLUMN_ITEM + " = " + itemName;
