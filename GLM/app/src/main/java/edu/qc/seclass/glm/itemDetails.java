@@ -43,7 +43,7 @@ public class itemDetails extends AppCompatActivity implements AdapterView.OnItem
                 DBHelper mDBHelper = new DBHelper(itemDetails.this);
                 String nameInput = itemName.getText().toString();
                 String categoryInput = itemCategory.getText().toString();
-                if (nameInput.length() != 0 || categoryInput.length()!=0) {
+                if (nameInput.length() != 0 && categoryInput.length()!=0) {
                     mDBHelper.insertGroceryItem(nameInput,categoryInput);
                 }
                 else {
