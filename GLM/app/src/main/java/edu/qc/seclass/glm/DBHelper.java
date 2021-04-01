@@ -96,15 +96,22 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists GROCERY_ITEMS_TABLE");
         onCreate(DB);
     }
-    /*
+
     public void insertGroceryItem (String itemName, String CategoryName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM, itemName);
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
         DB.insert(GROCERY_ITEMS_TABLE , null, contentValues);
+        long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
+        if (result == -1){
+            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
+        }
     }
-     */
+     /*
     public void insertGroceryItem(String itemName, String itemCategory){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -118,8 +125,9 @@ public class DBHelper extends SQLiteOpenHelper {
         else {
             Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
         }
-
     }
+
+      */
     public void UpdateCategory (String itemName, String CategoryName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

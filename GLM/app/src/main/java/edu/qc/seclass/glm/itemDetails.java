@@ -20,7 +20,7 @@ public class itemDetails extends AppCompatActivity implements AdapterView.OnItem
     DBHelper mDBHelper;
     Button enterButton;
     EditText itemName;
-    Spinner itemCategory;
+    EditText itemCategory;
 
 
     @Override
@@ -33,8 +33,8 @@ public class itemDetails extends AppCompatActivity implements AdapterView.OnItem
         enterButton = (Button) findViewById(R.id.enterButton);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories,
                 android.R.layout.simple_spinner_item);
-        itemCategory.setAdapter(adapter);
-        itemCategory.setOnItemSelectedListener(this);
+       // itemCategory.setAdapter(adapter);
+        //itemCategory.setOnItemSelectedListener(this);
 
 
         enterButton.setOnClickListener(new View.OnClickListener() {
@@ -42,8 +42,9 @@ public class itemDetails extends AppCompatActivity implements AdapterView.OnItem
             public void onClick(View v) {
                 DBHelper mDBHelper = new DBHelper(itemDetails.this);
                 String nameInput = itemName.getText().toString();
-                if (nameInput.length() != 0) {
-                    mDBHelper.insertGroceryItem(itemName.getText().toString().trim(), itemCategory.getSelectedItem().toString().trim());
+                String categoryInput = itemCategory.getText().toString();
+                if (nameInput.length() != 0 || categoryInput.length()!=0) {
+                    mDBHelper.insertGroceryItem(nameInput,categoryInput);
                 }
                 else {
                     Toast.makeText(itemDetails.this,"Empty Input!",Toast.LENGTH_SHORT).show();
