@@ -27,18 +27,17 @@ public class UserLists extends AppCompatActivity {
     private Button cancel, save;
     SQLiteDatabase listDatabase;
     ListView userList;
-
     RecyclerView mylistsRecycle;
     Button createList;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_lists);
-        mylistsRecycle = findViewById(R.id.myitemsRecycle);
+        //mylistsRecycle = findViewById(R.id.myitemsRecycle);
         createList = findViewById(R.id.createList);
         listDatabase = new DBHelperForList(this).getWritableDatabase();
         userList = findViewById(R.id.customerList);
+      //  userList = findViewById(R.id.myitemsRecycle);
         createList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,18 +47,21 @@ public class UserLists extends AppCompatActivity {
         });
 
     }
-
-
     public void onStart() {
         super.onStart();
         DBHelperForList userListdatabase = new DBHelperForList(UserLists.this);
         List<String> allList = userListdatabase.getAllList();
         ArrayAdapter userListArrayAdapter = new ArrayAdapter <String> (UserLists.this, android.R.layout.simple_list_item_1, allList);
         userList.setAdapter(userListArrayAdapter);
+       // userList.setAdapter((RecyclerView.Adapter) allList);
+
+
+
+
+
+
+
     }
-
-
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

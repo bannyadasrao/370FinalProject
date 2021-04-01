@@ -10,28 +10,27 @@
         android:id="@+id/createList"
         android:layout_width="250dp"
         android:layout_height="70dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/create_list"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/myitemsRecycle"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="82dp"
         android:layout_height="78dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.039"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041"
-        app:srcCompat="@drawable/ic_baseline_perm_identity_24"
-        android:contentDescription="@string/todo" />
+        app:layout_constraintVertical_bias="0.02"
+        app:srcCompat="@drawable/ic_baseline_perm_identity_24" />
 
     <TextView
         android:id="@+id/textView2"
@@ -46,18 +45,7 @@
         app:layout_constraintHorizontal_bias="0.188"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/myitemsRecycle"
-        android:layout_width="415dp"
-        android:layout_height="731dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <CheckBox
         android:id="@+id/checkBox1"
@@ -65,11 +53,12 @@
         android:layout_height="46dp"
         app:layout_constraintBottom_toTopOf="@+id/createList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.16"
+        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.113" />
-    
+        app:layout_constraintVertical_bias="0.029" />
+
+
     <ImageButton
         android:id="@+id/imageButton2"
         android:layout_width="wrap_content"
@@ -79,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.226"
         app:layout_constraintStart_toEndOf="@+id/item1"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.122"
+        app:layout_constraintVertical_bias="0.095"
         app:srcCompat="@drawable/ic_baseline_mode_edit_24" />
 
     <Button
@@ -88,23 +77,21 @@
         android:layout_height="wrap_content"
         android:onClick="goMyItemsPage"
         android:text="next"
-        app:layout_constraintBottom_toBottomOf="@+id/myitemsRecycle"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createList"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintHorizontal_bias="0.467"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
         android:id="@+id/customerList"
-        android:layout_width="406dp"
-        android:layout_height="231dp"
-        android:layout_marginTop="248dp"
+        android:layout_width="340dp"
+        android:layout_height="324dp"
+        android:layout_marginEnd="60dp"
         android:layout_marginBottom="63dp"
         app:layout_constraintBottom_toTopOf="@+id/createList"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/myitemsRecycle"
-        app:layout_constraintTop_toTopOf="@+id/myitemsRecycle"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.965"
         tools:ignore="MissingConstraints" />
 
 
