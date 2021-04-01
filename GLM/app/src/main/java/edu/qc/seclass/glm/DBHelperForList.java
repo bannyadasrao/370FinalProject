@@ -84,7 +84,11 @@ public class DBHelperForList extends SQLiteOpenHelper {
         }else{
             // No item found under the category return nothing.
         }
+
+        cursor.close();
+        DB.close();
         return returnList;
+
     }
 }
 

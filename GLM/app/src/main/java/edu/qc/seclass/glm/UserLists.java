@@ -6,13 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.List;
 
 public class UserLists extends AppCompatActivity {
 
@@ -20,6 +25,8 @@ public class UserLists extends AppCompatActivity {
     private AlertDialog dialog;
     private EditText listName;
     private Button cancel, save;
+    SQLiteDatabase listDatabase;
+    ListView userList;
 
     RecyclerView mylistsRecycle;
     Button createList;
@@ -28,9 +35,10 @@ public class UserLists extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_lists);
-
         mylistsRecycle = findViewById(R.id.myitemsRecycle);
         createList = findViewById(R.id.createList);
+        listDatabase = new DBHelperForList(this).getWritableDatabase();
+        userList = findViewById(R.id.customerList);
         createList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,7 +46,19 @@ public class UserLists extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
+
+
+    public void onStart() {
+        super.onStart();
+        DBHelperForList userListdatabase = new DBHelperForList(UserLists.this);
+        List<String> allList = userListdatabase.getAllList();
+        ArrayAdapter userListArrayAdapter = new ArrayAdapter <String> (UserLists.this, android.R.layout.simple_list_item_1, allList);
+        userList.setAdapter(userListArrayAdapter);
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
