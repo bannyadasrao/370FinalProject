@@ -46,8 +46,8 @@ public class renamelist extends AppCompatActivity implements View.OnClickListene
             }else if(oldnameOfList.getText().toString().length() == 0){
                 Toast.makeText(getApplicationContext(), "Please enter the old name of the list", Toast.LENGTH_LONG).show();
             } else if (newnametext.getText().toString().length() != 0 && oldnameOfList.getText().toString().length() != 0){
-                userListdatabase = new DBHelperForList(renamelist.this);
-             // boolean answer =   userListdatabase.UpdateListName(oldnameOfList.getText().toString(), newnametext.getText().toString());
+                userListdatabase = new DBHelperForList(this);
+              userListdatabase.UpdateListName(oldnameOfList.getText().toString(), newnametext.getText().toString());
                 Intent i = new Intent(this, UserLists.class);
                 startActivity(i);
             }

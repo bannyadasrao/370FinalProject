@@ -14,12 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBHelperForList extends SQLiteOpenHelper {
-
-    //public static final String USER_LIST = "USER_LIST";
-   // public static final String COLUMN_LIST_NAME = "LIST_NAME";
     public static final String USER_LIST = "USER_LIST";
-        public static final String COLUMN_ID = "ID";
-        public static final String COLUMN_LIST_NAME = "LIST_NAME";
+    public static final String COLUMN_ID = "ID";
+    public static final String COLUMN_LIST_NAME = "LIST_NAME";
     private Context context;
 
     public DBHelperForList(Context context) {
@@ -28,9 +25,6 @@ public class DBHelperForList extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         String createTableStatement = "CREATE TABLE IF NOT EXISTS " + USER_LIST + "(" + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_LIST_NAME + " TEXT)";
-       // String createTableStatement = "CREATE TABLE IF NOT EXISTS " + USER_LIST + " (" + COLUMN_LIST_NAME + " TEXT primary key )";
-
-
         DB.execSQL(createTableStatement);
     }
     @Override
@@ -57,7 +51,6 @@ public class DBHelperForList extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_LIST_NAME, newListName);
         long result =   DB.update(USER_LIST, contentValues, COLUMN_LIST_NAME + "=?", new String[]{oldListName});
-        //long result =   DB.update(USER_LIST, contentValues, COLUMN_LIST_NAME, new String[]{oldListName});
         if (result == -1){
             Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
         }
@@ -76,9 +69,6 @@ public class DBHelperForList extends SQLiteOpenHelper {
     }
     public void DeleteAllList (){
         SQLiteDatabase DB = this.getWritableDatabase();
-        // String queryString = " DELETE FROM " + USER_LIST;
-        //Cursor cursor = DB.rawQuery(queryString, null);
-        // cursor.close();
         DB.execSQL("delete from "+ USER_LIST);
         DB.close();
         return;
@@ -90,14 +80,12 @@ public class DBHelperForList extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getReadableDatabase();
         Cursor cursor = DB.rawQuery(queryString, null);
         if (cursor.moveToFirst()){
-            // if there are results loop through the results
             do{
                 String listName = cursor.getString(1);
                 returnList.add(listName);
             }while(cursor.moveToNext());
 
         }else{
-            // No item found under the category return nothing.
         }
 
         cursor.close();
