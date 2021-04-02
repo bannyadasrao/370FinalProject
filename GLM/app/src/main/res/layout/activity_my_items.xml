@@ -10,9 +10,7 @@
         android:id="@+id/AddItem"
         android:layout_width="250dp"
         android:layout_height="70dp"
-
-        android:onClick="goItemDeatilPage"
-
+        android:onClick="goSearchItemPage"
         android:text="@string/add_item"
         android:textSize="24sp"
         android:textStyle="bold"

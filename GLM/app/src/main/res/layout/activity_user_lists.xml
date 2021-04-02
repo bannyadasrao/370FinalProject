@@ -48,27 +48,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.107" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="38dp"
-        android:layout_height="46dp"
-        app:layout_constraintBottom_toTopOf="@+id/createList"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.029" />
-
-
-    <CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/txt_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
-        android:gravity="center_vertical"
-        android:padding="5dp"
-        tools:ignore="MissingConstraints" />
-
 
     <ListView
         android:id="@+id/customerList"
@@ -78,7 +57,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints" >
+
+
+    </ListView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

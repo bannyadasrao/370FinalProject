@@ -69,6 +69,15 @@ public class DBHelperForList extends SQLiteOpenHelper {
         return;
     }
 
+    public void DeleteAllList (){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        // String queryString = " DELETE FROM " + USER_LIST;
+        //Cursor cursor = DB.rawQuery(queryString, null);
+        // cursor.close();
+        DB.execSQL("delete from "+ USER_LIST);
+        DB.close();
+        return;
+    }
     public List<String> getAllList(){
         List<String> returnList = new ArrayList<String>();
         String queryString = "SELECT * FROM " + USER_LIST;

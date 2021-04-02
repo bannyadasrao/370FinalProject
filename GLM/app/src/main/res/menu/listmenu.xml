@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Clear All Check Marks"
-        android:id="@+id/clearallcheckmarks"/>
-
-    <item android:title="Delete Selected Lists"
-        android:id="@+id/deleteselectedlists"/>
-
     <item android:title="Delete All Lists"
         android:id="@+id/deletealllists"/>
 
