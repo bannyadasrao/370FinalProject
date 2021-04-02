@@ -18,10 +18,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.771" />
+        app:layout_constraintVertical_bias="0.948" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -40,6 +40,7 @@
         android:id="@+id/textView2"
         android:layout_width="154dp"
         android:layout_height="50dp"
+        android:layout_marginTop="28dp"
         android:text="@string/my_items"
         android:textColor="#FF9800"
         android:textSize="30sp"

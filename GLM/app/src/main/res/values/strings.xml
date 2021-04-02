@@ -98,4 +98,8 @@
     <string name="fruit">Fruit</string>
     <string name="fruitpic">fruitpic</string>
     <string name="fruitstext">Fruits</string>
+    <string name="search_by_category">Search By Category</string>
+    <string name="textView3">fruitstext</string>
+    <string name="pics">fruitpic</string>
+    <string name="icon">icon</string>
 </resources>

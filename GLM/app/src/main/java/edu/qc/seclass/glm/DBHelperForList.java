@@ -94,17 +94,6 @@ public class DBHelperForList extends SQLiteOpenHelper {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 // parameter of the constructor list name,
 
 

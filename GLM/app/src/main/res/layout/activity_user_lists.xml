@@ -17,7 +17,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -33,6 +33,7 @@
         app:layout_constraintVertical_bias="0.02"
         app:srcCompat="@drawable/ic_baseline_perm_identity_24" />
 
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="154dp"
@@ -46,8 +47,7 @@
         app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
-
+        app:layout_constraintVertical_bias="0.06" />
 
     <ListView
         android:id="@+id/customerList"
@@ -57,7 +57,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
-        tools:ignore="MissingConstraints" >
+        tools:ignore="MissingConstraints">
 
 
     </ListView>

@@ -60,7 +60,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(v.getContext(),"Clicked "+getAdapterPosition(),Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(v.getContext(),gridLayout.class);
+                    Intent i = new Intent(v.getContext(),searchCategory.class);
                     i.putExtra("title",images.get(getAdapterPosition()));
                     v.getContext().startActivity(i);
                 }

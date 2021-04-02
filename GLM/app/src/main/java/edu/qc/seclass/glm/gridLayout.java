@@ -8,18 +8,18 @@ import android.widget.TextView;
 
 public class gridLayout extends AppCompatActivity {
 
-    TextView fruit;
+    TextView searchCatgeory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_layout);
 
-        fruit = findViewById(R.id.textView3);
+        searchCatgeory = findViewById(R.id.textView3);
 
         Intent i = getIntent();
         String title = i.getStringExtra("title");
-        fruit.setText(title);
+        searchCatgeory.setText(title);
 
     }
 }

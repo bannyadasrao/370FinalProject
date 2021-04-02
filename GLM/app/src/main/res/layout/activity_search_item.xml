@@ -7,7 +7,7 @@
     tools:context=".searchItem">
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/searchcategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -27,7 +27,7 @@
         android:id="@+id/searchitembyname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView4"
+        android:layout_below="@id/searchcategory"
         android:layout_marginStart="35dp"
         android:layout_marginEnd="5dp"
         android:autofillHints=""
@@ -39,20 +39,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
         app:layout_constraintVertical_bias="0.011" />
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="42dp"
         android:layout_height="60dp"
-        android:layout_below="@id/textView4"
+        android:layout_below="@id/searchcategory"
         android:contentDescription="@string/searchicon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_search_24" />
 
