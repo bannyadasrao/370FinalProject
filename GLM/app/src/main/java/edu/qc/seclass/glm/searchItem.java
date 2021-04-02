@@ -1,96 +1,53 @@
 package edu.qc.seclass.glm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
+import java.util.ArrayList;
+import java.util.List;
 
-public class searchItem extends AppCompatActivity implements View.OnClickListener{
-    ImageButton fruits, meat, dairy, vegetables, bakery, snack, liquor, beverages, cleaning, hygiene;
+public class searchItem extends AppCompatActivity{
+    RecyclerView categories;
+    List<String> titles;
+    List<Integer> images;
+    Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_item);
+        categories = findViewById(R.id.categories);
 
-        fruits = findViewById(R.id.fruits);
-        meat = findViewById(R.id.meat);
-        dairy = findViewById(R.id.dairy);
-        vegetables = findViewById(R.id.vegetables);
-        bakery = findViewById(R.id.bakery);
-        snack = findViewById(R.id.snack);
-        liquor = findViewById(R.id.liquor);
-        beverages = findViewById(R.id.beverages);
-        cleaning = findViewById(R.id.cleaning);
-        hygiene = findViewById(R.id.hygiene);
+        titles = new ArrayList<>();
+        images = new ArrayList<>();
 
-        fruits.setOnClickListener(this);
-        meat.setOnClickListener(this);
-        dairy.setOnClickListener(this);
-        vegetables.setOnClickListener(this);
-        bakery.setOnClickListener(this);
-        snack.setOnClickListener(this);
-        liquor.setOnClickListener(this);
-        beverages.setOnClickListener(this);
-        cleaning.setOnClickListener(this);
-        hygiene.setOnClickListener(this);
-    }
+        titles.add("Fruits");
+        titles.add("Meat");
+        titles.add("Dairy");
+        titles.add("Vegetable");
+        titles.add("Bakery");
+        titles.add("Snack");
+        titles.add("Liquor");
+        titles.add("Beverage");
+        titles.add("Cleaning");
+        titles.add("Hygiene");
 
-    @Override
-    public void onClick(View v) {
-        Intent i;
-        switch (v.getId()){
-            case R.id.fruits:
-                i = new Intent(this,categoryFruit.class);
-                startActivity(i);
-                break;
+        images.add(R.drawable.fruits);
+        images.add(R.drawable.meat);
+        images.add(R.drawable.dairy);
+        images.add(R.drawable.vegetables);
+        images.add(R.drawable.bakery);
+        images.add(R.drawable.snack);
+        images.add(R.drawable.liquor);
+        images.add(R.drawable.beverages);
+        images.add(R.drawable.cleaning);
+        images.add(R.drawable.hygiene);
 
-            case R.id.meat:
-                i = new Intent(this,categoryMeat.class);
-                startActivity(i);
-                break;
-
-            case R.id.dairy:
-                i = new Intent(this,categoryDairy.class);
-                startActivity(i);
-                break;
-
-            case R.id.vegetables:
-                i = new Intent(this,categoryVegetables.class);
-                startActivity(i);
-                break;
-
-            case R.id.bakery:
-                i = new Intent(this,categoryBakery.class);
-                startActivity(i);
-                break;
-
-            case R.id.snack:
-                i = new Intent(this,categorySnack.class);
-                startActivity(i);
-                break;
-
-            case R.id.liquor:
-                i = new Intent(this,categoryLiquor.class);
-                startActivity(i);
-                break;
-
-            case R.id.beverages:
-                i = new Intent(this,categoryBeverages.class);
-                startActivity(i);
-                break;
-
-            case R.id.cleaning:
-                i = new Intent(this,categoryCleaning.class);
-                startActivity(i);
-                break;
-
-            case R.id.hygiene:
-                i = new Intent(this,categoryHygiene.class);
-                startActivity(i);
-                break;
-        }
+        adapter = new Adapter(this,titles,images);
+        GridLayoutManager glManager = new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
+        categories.setLayoutManager(glManager);
+        categories.setAdapter(adapter);
     }
 }

@@ -41,9 +41,6 @@
             android:name=".categoryFruit"
             android:label="Fruit Category" />
         <activity
-            android:name=".searchItem"
-            android:label="Grocery List" />
-        <activity
             android:name=".MyItems"
             android:label="Grocery List" />
         <activity

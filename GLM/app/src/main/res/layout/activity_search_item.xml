@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
     tools:context=".searchItem">
 
     <TextView
@@ -58,170 +56,15 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_search_24" />
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:layout_below="@id/searchitembyname"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="5dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categories"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchitembyname"
-        app:layout_constraintVertical_bias="0.393">
-
-        <ImageButton
-            android:id="@+id/fruits"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:backgroundTint="#FFFFFF"
-            android:contentDescription="@string/fruit_category"
-            android:onClick="onClick"
-            android:src="@drawable/fruits"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/meat"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFF"
-            android:contentDescription="@string/meat_category"
-            android:src="@drawable/meat"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/dairy"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/dairy_category"
-            android:src="@drawable/dairy"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/vegetables"
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/vegetable_category"
-            android:src="@drawable/vegetables"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/bakery"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/bakery_category"
-            android:src="@drawable/bakery"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/snack"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="2"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/snack_category"
-            android:src="@drawable/snack"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/liquor"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/liquor_category"
-            android:src="@drawable/liquor"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/beverages"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="3"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/begerages_category"
-            android:src="@drawable/beverages"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/cleaning"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/cleaning_category"
-            android:src="@drawable/cleaning"
-            android:text="@string/button" />
-
-        <ImageButton
-            android:id="@+id/hygiene"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:layout_row="4"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="1dp"
-            android:background="#FFFFFF"
-            android:contentDescription="@string/hygiene_category"
-            android:src="@drawable/hygiene"
-            android:text="@string/button" />
-
-    </GridLayout>
+        app:layout_constraintTop_toBottomOf="@+id/searchitembyname" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

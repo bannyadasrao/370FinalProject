@@ -7,10 +7,12 @@
     tools:context=".MyItems">
 
     <Button
-        android:id="@+id/createList"
+        android:id="@+id/AddItem"
         android:layout_width="250dp"
         android:layout_height="70dp"
+
         android:onClick="goItemDeatilPage"
+
         android:text="@string/add_item"
         android:textSize="24sp"
         android:textStyle="bold"
