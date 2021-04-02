@@ -4,6 +4,6 @@
     <item android:title="Delete All Lists"
         android:id="@+id/deletealllists"/>
 
-    <item android:title="Rename Selected Lists"
+    <item android:title="Rename List"
         android:id="@+id/renameselectedlists"/>
 </menu>
