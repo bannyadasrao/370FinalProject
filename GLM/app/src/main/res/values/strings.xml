@@ -94,20 +94,8 @@
     <string name="search_cleaning">Search Cleaning</string>
     <string name="search_dairy">Search Dairy</string>
     <string name="pencil_icon">pencil_icon</string>
-
-    <string-array name="categories">
-        <item>Select Item Category</item>
-        <item>Bakery</item>
-        <item>Beverages</item>
-        <item>Cleaning</item>
-        <item>Dairy</item>
-        <item>Fruit</item>
-        <item>Hygiene</item>
-        <item>Liquor</item>
-        <item>Meat</item>
-        <item>Snack</item>
-        <item>Vegetable</item>
-    </string-array>
-
-
+    <string name="fruit_pic">fruit_pic</string>
+    <string name="fruit">Fruit</string>
+    <string name="fruitpic">fruitpic</string>
+    <string name="fruitstext">Fruits</string>
 </resources>

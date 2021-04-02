@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class MyItems extends AppCompatActivity {
-    Button addButton;
-
-
+Button addButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +30,16 @@ public class MyItems extends AppCompatActivity {
 
     }
 
-    public void goPreviousPage(View view){
+   public void goPreviousPage(View view){
         Intent i = new Intent(this,UserLists.class);
         startActivity(i);
     }
     public void goItemDeatilPage(View view){
         Intent i = new Intent(this,itemDetails.class);
+        startActivity(i);
+    }
+    public void goSearchItemsPage(View view){
+        Intent i = new Intent(this,searchItem.class);
         startActivity(i);
     }
 
