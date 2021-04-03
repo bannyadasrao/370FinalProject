@@ -2,6 +2,7 @@ package edu.qc.seclass.glm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -29,12 +30,15 @@ public class itemDetails extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
         itemName = (EditText) findViewById(R.id.itemName);
-        itemCategory = findViewById(R.id.itemCategory);
-        enterButton = (Button) findViewById(R.id.enterButton);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories,
-                android.R.layout.simple_spinner_item);
-       // itemCategory.setAdapter(adapter);
-        //itemCategory.setOnItemSelectedListener(this);
+//
+//        itemCategory = findViewById(R.id.itemCategory);
+//        enterButton = (Button) findViewById(R.id.enterButton);
+//
+//
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.itemCategories,
+//                android.R.layout.simple_spinner_item);
+//        itemCategory.setAdapter(adapter);
+//        itemCategory.setOnItemSelectedListener(this);
 
 
         enterButton.setOnClickListener(new View.OnClickListener() {

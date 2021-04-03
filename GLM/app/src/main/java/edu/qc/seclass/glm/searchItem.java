@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +17,15 @@ public class searchItem extends AppCompatActivity{
     List<Integer> images;
     Adapter adapter;
 
+    private ImageButton searchbtn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_item);
+
+        searchbtn = findViewById(R.id.searchbtn);
+
         categories = findViewById(R.id.categories);
 
         titles = new ArrayList<>();
@@ -49,5 +57,13 @@ public class searchItem extends AppCompatActivity{
         GridLayoutManager glManager = new GridLayoutManager(this,2,GridLayoutManager.VERTICAL,false);
         categories.setLayoutManager(glManager);
         categories.setAdapter(adapter);
+
+        searchbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddNewTask.newInstance().show(getSupportFragmentManager() , AddNewTask.TAG);
+            }
+        });
+
     }
 }

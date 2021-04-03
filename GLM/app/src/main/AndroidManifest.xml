@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
-        <activity android:name=".searchCategory"
-            android:label="Grocery List" ></activity>
+        <activity android:name=".AddNewItems"></activity>
+        <activity
+            android:name=".searchCategory"
+            android:label="Grocery List" />
         <activity android:name=".gridLayout" />
-        <activity android:name=".searchItem"
+        <activity
+            android:name=".searchItem"
             android:label="Grocery List" />
         <activity
             android:name=".MyItems"

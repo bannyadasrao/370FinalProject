@@ -14,6 +14,6 @@
         android:id="@+id/deleteallitems"/>
 
 
-    <item android:title="Delete Selected Lists"
-        android:id="@+id/deleteselectedlists"/>
+    <item android:title="Delete Current List"
+        android:id="@+id/deletecurrentlist"/>
 </menu>
