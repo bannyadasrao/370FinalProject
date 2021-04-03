@@ -34,7 +34,8 @@ public class AdapterForItems extends RecyclerView.Adapter<AdapterForItems.MyView
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         final ToDoModel item = mList.get(position);
-        holder.mCheckBox.setText(item.getTask());
+        holder.mCheckBox.setText(item.getItem());
+        holder.mCheckBox.setText(item.getCategory());
         holder.mCheckBox.setChecked(toBoolean(item.getStatus()));
         holder.mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -62,7 +63,7 @@ public class AdapterForItems extends RecyclerView.Adapter<AdapterForItems.MyView
 
     public void deletTask(int position){
         ToDoModel item = mList.get(position);
-        myDB.deleteTask(item.getId());
+        myDB.deleteITEM(item.getId());
         mList.remove(position);
         notifyItemRemoved(position);
     }
@@ -72,7 +73,8 @@ public class AdapterForItems extends RecyclerView.Adapter<AdapterForItems.MyView
 
         Bundle bundle = new Bundle();
         bundle.putInt("id" , item.getId());
-        bundle.putString("task" , item.getTask());
+        bundle.putString("item" , item.getItem());
+        bundle.putString("category",item.getCategory());
 
         AddNewTask task = new AddNewTask();
         task.setArguments(bundle);

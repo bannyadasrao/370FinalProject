@@ -2,16 +2,22 @@ package edu.qc.seclass.glm;
 
 public class ToDoModel {
 
-    private String task;
-    private int id, status;
+    private String item, category;
 
-
-    public String getTask() {
-        return task;
+    public String getItem() {
+        return item;
     }
 
-    public void setTask(String task) {
-        this.task = task;
+    public void setItem(String item) {
+        this.item = item;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public int getId() {
@@ -29,5 +35,8 @@ public class ToDoModel {
     public void setStatus(int status) {
         this.status = status;
     }
+
+    private int id, status;
+
 
 }

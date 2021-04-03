@@ -104,21 +104,6 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM, itemName);
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
-       long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
-        if (result == -1){
-            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
-        }
-    }
-     /*
-    public void insertGroceryItem(String itemName, String itemCategory){
-        SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_ITEM,itemName);
-        contentValues.put(COLUMN_ITEM_CATEGORY,itemCategory);
-
         long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
         if (result == -1){
             Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
@@ -127,13 +112,28 @@ public class DBHelper extends SQLiteOpenHelper {
             Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
         }
     }
+    /*
+   public void insertGroceryItem(String itemName, String itemCategory){
+       SQLiteDatabase DB = this.getWritableDatabase();
+       ContentValues contentValues = new ContentValues();
+       contentValues.put(COLUMN_ITEM,itemName);
+       contentValues.put(COLUMN_ITEM_CATEGORY,itemCategory);
 
-      */
+       long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
+       if (result == -1){
+           Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
+       }
+       else {
+           Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
+       }
+   }
+
+     */
     public void UpdateCategory (String itemName, String CategoryName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
-       //DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
+        //DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
         long result = DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
         if (result == -1){
             //Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
@@ -142,7 +142,7 @@ public class DBHelper extends SQLiteOpenHelper {
         else {
             Toast.makeText(context,"Updated Successfully!",Toast.LENGTH_SHORT).show();
         }
-       //long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
+        //long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
         return;
     }
 
@@ -150,7 +150,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void DeleteGroceryItem (String itemName){
         SQLiteDatabase DB = this.getWritableDatabase();
         String queryString = " DELETE FROM " + GROCERY_ITEMS_TABLE + " WHERE " + COLUMN_ITEM + " = " + itemName;
-       Cursor cursor = DB.rawQuery(queryString, null);
+        Cursor cursor = DB.rawQuery(queryString, null);
         return;
     }
     public List<String> getItemsForCategory(String CategoryName){

@@ -43,7 +43,7 @@ public class MyItems extends AppCompatActivity implements OnDialogCloseListener 
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerview.setAdapter(adapter);
 
-        mList = myDB.getAllTasks();
+        mList = myDB.getAllITEMS();
         Collections.reverse(mList);
         adapter.setTasks(mList);
     }
@@ -67,7 +67,7 @@ public class MyItems extends AppCompatActivity implements OnDialogCloseListener 
 
     @Override
     public void onDialogClose(DialogInterface dialogInterface) {
-        mList = myDB.getAllTasks();
+        mList = myDB.getAllITEMS();
         Collections.reverse(mList);
         adapter.setTasks(mList);
         adapter.notifyDataSetChanged();
