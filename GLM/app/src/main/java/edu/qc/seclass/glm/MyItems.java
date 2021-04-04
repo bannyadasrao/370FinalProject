@@ -14,9 +14,14 @@ public class MyItems extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        addButton = findViewById(R.id.AddItem);
+        addButton = findViewById(R.id.AddByCategory);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
+    }
+
+    public void goSearchCategoryPage(View view){
+        Intent i = new Intent(this,searchCategory.class);
+        startActivity(i);
     }
 
     public void goSearchItemPage(View view){
@@ -24,23 +29,9 @@ public class MyItems extends AppCompatActivity {
         startActivity(i);
     }
 
-
     public void onStart() {
         super.onStart();
 
-    }
-
-   public void goPreviousPage(View view){
-        Intent i = new Intent(this,UserLists.class);
-        startActivity(i);
-    }
-    public void goItemDeatilPage(View view){
-        Intent i = new Intent(this,itemDetails.class);
-        startActivity(i);
-    }
-    public void goSearchItemsPage(View view){
-        Intent i = new Intent(this,searchItem.class);
-        startActivity(i);
     }
 
     @Override

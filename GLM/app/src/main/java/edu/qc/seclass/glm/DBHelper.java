@@ -202,11 +202,12 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getReadableDatabase();
         Cursor cursor = DB.query(GROCERY_ITEMS_TABLE,null,null,null,null,null,null);
         cursor.moveToFirst();
-            while(!cursor.isAfterLast()) {
-                allName.add(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM)));
-                cursor.moveToNext();
-            }
+        while(!cursor.isAfterLast()) {
+            allName.add(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM)));
+            cursor.moveToNext();
+        }
         cursor.close();
         return allName;
     }
+
 }

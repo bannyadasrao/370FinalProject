@@ -86,15 +86,12 @@ public class DBHelperForList extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
 
         }else{
-        }
 
+        }
         cursor.close();
         DB.close();
         return returnList;
 
     }
 }
-// parameter of the constructor list name,
-
-
 

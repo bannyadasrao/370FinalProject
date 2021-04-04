@@ -7,21 +7,35 @@
     tools:context=".MyItems">
 
     <Button
-        android:id="@+id/AddItem"
-        android:layout_width="250dp"
+        android:id="@+id/AddByCategory"
+        android:layout_width="wrap_content"
         android:layout_height="70dp"
-
-        android:onClick="goSearchItemPage"
-
-        android:text="@string/add_item"
+        android:onClick="goSearchCategoryPage"
+        android:text="Search By Category"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948" />
+        app:layout_constraintVertical_bias="0.833" />
+
+    <Button
+        android:id="@+id/AddByItemName"
+        android:layout_width="330dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="goSearchItemPage"
+        android:text="Search By Name"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView4"

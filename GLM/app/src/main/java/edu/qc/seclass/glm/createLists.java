@@ -15,8 +15,6 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
     EditText namefornewlist;
     Button savecreatedlist;
     SQLiteDatabase listDatabase;
-    //private Object Intent;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

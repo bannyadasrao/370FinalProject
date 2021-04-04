@@ -33,9 +33,6 @@ public class itemDetails extends AppCompatActivity implements AdapterView.OnItem
         enterButton = (Button) findViewById(R.id.enterButton);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories,
                 android.R.layout.simple_spinner_item);
-       // itemCategory.setAdapter(adapter);
-        //itemCategory.setOnItemSelectedListener(this);
-
 
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override

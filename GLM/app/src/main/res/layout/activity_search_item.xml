@@ -7,7 +7,7 @@
     tools:context=".searchItem">
 
     <TextView
-        android:id="@+id/searchcategory"
+        android:id="@+id/searchItemByName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -27,45 +27,34 @@
         android:id="@+id/autosearchbyname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchcategory"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="5dp"
-        android:autofillHints=""
-        android:hint="@string/what_would_you_like_to_add"
+        android:layout_below="@id/searchItemByName"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="328dp"
+        android:layout_marginTop="20dp"
+        android:completionThreshold="1"
+        android:hint="Enter Name"
         android:inputType="text"
         android:textAlignment="center"
         android:textSize="24sp"
-        android:completionThreshold="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
-        app:layout_constraintVertical_bias="0.011" />
+        app:layout_constraintTop_toBottomOf="@+id/searchItemByName"
+        app:layout_constraintVertical_bias="0.028" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="42dp"
-        android:layout_height="60dp"
-        android:layout_below="@id/searchcategory"
+    <ImageButton
+        android:id="@+id/searchByNameButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/searchItemByName"
+        android:background="#FFFFFF"
         android:contentDescription="@string/searchicon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintHorizontal_bias="0.897"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@+id/searchItemByName"
+        app:layout_constraintVertical_bias="0.035"
         app:srcCompat="@drawable/ic_baseline_search_24" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categories"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchitembyname" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
