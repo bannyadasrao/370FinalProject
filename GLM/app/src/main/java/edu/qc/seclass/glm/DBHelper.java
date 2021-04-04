@@ -49,12 +49,12 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Green Tea,', 'Dry Goods')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Travis Scott Reesses Puffs', 'Dry Goods')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Instant Noodles', 'Dry Goods')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Chicken', 'Meat/ Poultry/ Fish/ Egg')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Egg', 'Meat/ Poultry/ Fish/ Egg')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Salmon', 'Meat/ Poultry/ Fish/ Egg')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Sausage', 'Meat/ Poultry/ Fish/ Egg')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Pork', 'Meat/ Poultry/ Fish/ Egg')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Beef', 'Meat/ Poultry/ Fish/ Egg')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Chicken', 'Meat')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Egg', 'Egg')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Salmon', 'Fish')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Sausage', 'Meat')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Pork', 'Meat')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Beef', 'Meat')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Crossiant', 'Bakery')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Cake', 'Bakery')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Oreos', 'Bakery')");
@@ -67,13 +67,13 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Nuts', 'Snacks')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Hershey', 'Snacks')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Ferrero Rocher', 'Snacks')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Tomatoes', 'Produce')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Oranges', 'Produce')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Carrots', 'Produce')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Apples', 'Produce')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Potatos', 'Produce')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Cherries', 'Produce')");
-        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Papaya', 'Produce')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Tomatoes', 'Vegetables')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Oranges', 'Fruits')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Carrots', 'Vegetables')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Apples', 'Fruits')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Potatos', 'Vegetables')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Cherries', 'Fruits')");
+        DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Papaya', 'Fruits')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Cheese', 'Dairy')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Milk', 'Dairy')");
         DB.execSQL("INSERT INTO " + GROCERY_ITEMS_TABLE + "(" + COLUMN_ITEM + "," + COLUMN_ITEM_CATEGORY + ") values('Yogurt', 'Dairy')");
@@ -104,6 +104,21 @@ public class DBHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM, itemName);
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
+       long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
+        if (result == -1){
+            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
+        }
+    }
+     /*
+    public void insertGroceryItem(String itemName, String itemCategory){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COLUMN_ITEM,itemName);
+        contentValues.put(COLUMN_ITEM_CATEGORY,itemCategory);
+
         long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
         if (result == -1){
             Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
@@ -112,28 +127,13 @@ public class DBHelper extends SQLiteOpenHelper {
             Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
         }
     }
-    /*
-   public void insertGroceryItem(String itemName, String itemCategory){
-       SQLiteDatabase DB = this.getWritableDatabase();
-       ContentValues contentValues = new ContentValues();
-       contentValues.put(COLUMN_ITEM,itemName);
-       contentValues.put(COLUMN_ITEM_CATEGORY,itemCategory);
 
-       long result = DB.insert(GROCERY_ITEMS_TABLE,null,contentValues);
-       if (result == -1){
-           Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
-       }
-       else {
-           Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
-       }
-   }
-
-     */
+      */
     public void UpdateCategory (String itemName, String CategoryName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_ITEM_CATEGORY, CategoryName);
-        //DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
+       //DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
         long result = DB.update(GROCERY_ITEMS_TABLE, contentValues, "Item=?", new String[]{itemName});
         if (result == -1){
             //Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
@@ -142,7 +142,7 @@ public class DBHelper extends SQLiteOpenHelper {
         else {
             Toast.makeText(context,"Updated Successfully!",Toast.LENGTH_SHORT).show();
         }
-        //long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
+       //long result =   DB.update(GROCERY_ITEMS_TABLE, contentValues, COLUMN_ITEM, new String[]{itemName});
         return;
     }
 
@@ -150,7 +150,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void DeleteGroceryItem (String itemName){
         SQLiteDatabase DB = this.getWritableDatabase();
         String queryString = " DELETE FROM " + GROCERY_ITEMS_TABLE + " WHERE " + COLUMN_ITEM + " = " + itemName;
-        Cursor cursor = DB.rawQuery(queryString, null);
+       Cursor cursor = DB.rawQuery(queryString, null);
         return;
     }
     public List<String> getItemsForCategory(String CategoryName){
@@ -195,5 +195,18 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
         DB.close();
         return returnList;
+    }
+
+    public ArrayList<String> getItemName(){
+        ArrayList<String> allName = new ArrayList<>();
+        SQLiteDatabase DB = this.getReadableDatabase();
+        Cursor cursor = DB.query(GROCERY_ITEMS_TABLE,null,null,null,null,null,null);
+        cursor.moveToFirst();
+            while(!cursor.isAfterLast()) {
+                allName.add(cursor.getString(cursor.getColumnIndex(COLUMN_ITEM)));
+                cursor.moveToNext();
+            }
+        cursor.close();
+        return allName;
     }
 }

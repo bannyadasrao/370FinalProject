@@ -28,46 +28,38 @@
         android:id="@+id/itemName"
         android:layout_width="211dp"
         android:layout_height="45dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="220dp"
         android:ems="10"
         android:hint="Item Name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.317"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <EditText
-        android:id="@+id/itemCategory"
-        android:layout_width="211dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="92dp"
-        android:ems="10"
-        android:hint="Item Category"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemName" />
-
     <Button
-        android:id="@+id/saveButton"
+        android:id="@+id/enterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="116dp"
         android:text="Enter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemCategory"
-        app:layout_constraintVertical_bias="0.225"
-        android:layout_marginBottom="10dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Spinner
-        android:id="@+id/spinner"
+    <EditText
+        android:id="@+id/itemCategory"
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="308dp" />
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Item Category"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/enterButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.332"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/itemName"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

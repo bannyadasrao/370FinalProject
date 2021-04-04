@@ -23,37 +23,39 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <EditText
-        android:id="@+id/searchitembyname"
-        android:layout_width="280dp"
+    <AutoCompleteTextView
+        android:id="@+id/autosearchbyname"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_below="@id/searchcategory"
+        android:layout_marginStart="35dp"
         android:layout_marginEnd="5dp"
-        android:hint="Enter Name"
+        android:autofillHints=""
+        android:hint="@string/what_would_you_like_to_add"
         android:inputType="text"
         android:textAlignment="center"
         android:textSize="24sp"
+        android:completionThreshold="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchcategory"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.011" />
 
-    <ImageButton
-        android:id="@+id/searchbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        app:srcCompat="@drawable/ic_baseline_search_24"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="14dp"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="42dp"
+        android:layout_height="60dp"
         android:layout_below="@id/searchcategory"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="5dp"
         android:contentDescription="@string/searchicon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchcategory" />
+        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_baseline_search_24" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/categories"

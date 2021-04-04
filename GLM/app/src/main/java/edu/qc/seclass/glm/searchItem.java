@@ -5,8 +5,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,16 +16,15 @@ public class searchItem extends AppCompatActivity{
     List<String> titles;
     List<Integer> images;
     Adapter adapter;
+    private AutoCompleteTextView autosearchbyname;
+    private ArrayList<String> allName;
+    private DBHelper db;
 
-    private ImageButton searchbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_item);
-
-        searchbtn = findViewById(R.id.searchbtn);
-
         categories = findViewById(R.id.categories);
 
         titles = new ArrayList<>();
@@ -58,12 +57,11 @@ public class searchItem extends AppCompatActivity{
         categories.setLayoutManager(glManager);
         categories.setAdapter(adapter);
 
-        searchbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AddNewTask.newInstance().show(getSupportFragmentManager() , AddNewTask.TAG);
-            }
-        });
+        autosearchbyname = findViewById(R.id.autosearchbyname);
+        db = new DBHelper(searchItem.this);
+        allName = db.getItemName();
+        ArrayAdapter<String> autoComplete = new ArrayAdapter<>(searchItem.this, android.R.layout.simple_list_item_1,allName);
+        autosearchbyname.setAdapter(autoComplete);
 
     }
 }
