@@ -8,24 +8,27 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelperForItems extends SQLiteOpenHelper {
 
-    private static final String DB_NAME = "GroceryItem.db";
-    private static final String DB_TABLE = "ITEM_LIST";
+    public static final String DB_TABLE = "ITEM_LIST";
+    public static final String ID = "ID";
+    public static final String NAME = "ITEM_NAME";
+    public static final String CATEGORY = "ITEM_CATEGORY";
 
-    private static final String ID = "ID";
-    private static final String NAME = "ITEM_NAME";
-//    private static final String CATEGORY = "ITEM_CATEGORY";
+    private Context context;
 
-    private static final String CREATE_TABLE = "CREATE TABLE " + DB_TABLE+" ("+
-            ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "+
-            NAME+ " TEXT "+ ")";
+
 
     public DBHelperForItems(Context context){
-        super(context,DB_NAME,null,1);
+        super(context, "Grocery" + NAME + "s.db", null, 1);
+        this.context = context;
 
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_TABLE);
+
+        String createTableStatement = "CREATE TABLE " + DB_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " TEXT, " + CATEGORY + " TEXT)";
+        //String createTableStatement = "CREATE TABLE ITEM_LIST (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM_NAME TEXT, ITEM_CATEGORY TEXT)"
+        db.execSQL(createTableStatement);
+
     }
 
     @Override
@@ -34,10 +37,19 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String name){
+   /* public boolean insertData(String name){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(NAME, name);
+
+        long result = db.insert(DB_TABLE,null,contentValues);
+        return result != -1; // if return -1, data won't insert.
+    }*/
+    public boolean insertData(String name, String category){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(NAME, name);
+        contentValues.put(CATEGORY, category);
 
         long result = db.insert(DB_TABLE,null,contentValues);
         return result != -1; // if return -1, data won't insert.

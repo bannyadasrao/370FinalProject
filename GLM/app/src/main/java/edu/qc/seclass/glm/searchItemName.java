@@ -30,11 +30,16 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
     ArrayList<String> listItem;
     ArrayAdapter adapter;
     ListView itemlist;
+    //String text;
+    // text;
+    String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_item_name);
+      // text = itemlist.getItemAtPosition(0).toString();
+       //int Position;
 
         db = new DBHelperForItems(this);
 
@@ -44,19 +49,24 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
         add_name = findViewById(R.id.add_name);
         itemlist = findViewById(R.id.itemlist);
 
-        Spinner spinner = findViewById(R.id.add_category);
+
+        final Spinner[] spinner = {findViewById(R.id.add_category)};
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,R.array.categoriesList, android.R.layout.simple_spinner_item);
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(spinnerAdapter);
-        spinner.setOnItemSelectedListener(this);
+        spinner[0].setAdapter(spinnerAdapter);
+        spinner[0].setOnItemSelectedListener(this);
 
         viewData();
 
         itemlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String text = itemlist.getItemAtPosition(position).toString();
-                Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
+              //  Position = position;
+               String  text = itemlist.getItemAtPosition(position).toString();
+                 Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
+
 
             }
         });
@@ -64,7 +74,9 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 String name = add_name.getText().toString();
-                if(!name.equals("") && db.insertData(name)){
+               // int position;
+               // text = itemlist.getItemAtPosition(position).toString();
+                if(!name.equals("") && db.insertData(name, text)){
                     Toast.makeText(searchItemName.this, "Data added", Toast.LENGTH_SHORT).show();
                     add_name.setText("");
                     listItem.clear();
@@ -122,7 +134,8 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
+        text = parent.getItemAtPosition(position).toString();
+       // Toast.makeText(searchItemName.this,"if this is what i think it is"+text,Toast.LENGTH_SHORT).show();
         Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
     }
     @Override
