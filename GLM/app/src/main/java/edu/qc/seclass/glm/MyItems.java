@@ -11,11 +11,13 @@ import android.widget.Button;
 
 public class MyItems extends AppCompatActivity {
     Button addButton;
+    String listName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         addButton = findViewById(R.id.AddByCategory);
         super.onCreate(savedInstanceState);
+        listName = getIntent().getStringExtra("ListViewClickValue");
         setContentView(R.layout.activity_my_items);
     }
 
@@ -25,7 +27,9 @@ public class MyItems extends AppCompatActivity {
     }
 
     public void goSearchItemNamePage(View view){
+
         Intent i = new Intent(this,searchItemName.class);
+        i.putExtra("Listname", listName);
         startActivity(i);
     }
 
