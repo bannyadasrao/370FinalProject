@@ -105,4 +105,14 @@
         app:layout_constraintVertical_bias="0.142"
         app:srcCompat="@drawable/ic_baseline_mode_edit_24" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyler_view"
+        android:layout_width="400dp"
+        android:layout_height="412dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/AddByCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
