@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelperForItems extends SQLiteOpenHelper {
 
+    public static final String DB_NAME = "GroceryItem.db";
     public static final String DB_TABLE = "ITEM_LIST";
     public static final String ID = "ID";
     public static final String NAME = "ITEM_NAME";
@@ -15,10 +16,8 @@ public class DBHelperForItems extends SQLiteOpenHelper {
 
     private Context context;
 
-
-
     public DBHelperForItems(Context context){
-        super(context, "Grocery" + NAME + "s.db", null, 1);
+        super(context, DB_NAME, null, 1);
         this.context = context;
 
     }
