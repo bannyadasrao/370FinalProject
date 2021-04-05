@@ -102,4 +102,18 @@
     <string name="textView3">fruitstext</string>
     <string name="pics">fruitpic</string>
     <string name="icon">icon</string>
+
+    <string-array name="categoriesList">
+        <item>Fruits</item>
+        <item>Meat</item>
+        <item>Dairy</item>
+        <item>Vegetable</item>
+        <item>Bakery</item>
+        <item>Snack</item>
+        <item>Liquor</item>
+        <item>Beverage</item>
+        <item>Cleaning</item>
+        <item>Hygiene</item>
+    </string-array>
+
 </resources>
