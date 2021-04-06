@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Check All Items Off"
+        android:id="@+id/checkallitemsoff"/>
+
+    <item android:title="Clear All Check Marks"
+        android:id="@+id/clearallcheckmarks"/>
+
+    <item android:title="Delete Selected Items"
+        android:id="@+id/deleteselecteditems"/>
+
+    <item android:title="Delete All Items"
+        android:id="@+id/deleteallitems"/>
+
+
+    <item android:title="Delete Selected Lists"
+        android:id="@+id/deleteselectedlists"/>
+</menu>

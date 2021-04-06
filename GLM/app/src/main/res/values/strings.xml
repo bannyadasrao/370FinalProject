@@ -1,0 +1,119 @@
+<resources>
+    <string name="app_name">GLM</string>
+    <string name="your_dream_grocery">Your Dream Grocery</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="grocerypic">grocerypic</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">CANCEL</string>
+    <string name="create_list">CREATE LIST</string>
+    <string name="list1">List1</string>
+    <string name="my_lists">My Lists</string>
+    <string name="todo">TODO</string>
+    <string name="list2">List2</string>
+    <string name="list3">List3</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="add_item">ADD ITEM</string>
+    <string name="my_items">My Items</string>
+    <string name="item1">item1</string>
+    <string name="search_items">Search Items</string>
+    <string name="what_would_you_like_to_add">What would you like to add?</string>
+    <string name="searchicon">searchicon</string>
+    <string name="fruit_category">fruit category</string>
+    <string name="meat_category">meat category</string>
+    <string name="dairy_category">dairy category</string>
+    <string name="vegetable_category">vegetable category</string>
+    <string name="bakery_category">bakery category</string>
+    <string name="snack_category">snack category</string>
+    <string name="liquor_category">liquor category</string>
+    <string name="begerages_category">begerages category</string>
+    <string name="cleaning_category">cleaning category</string>
+    <string name="button">Button</string>
+    <string name="hygiene_category">hygiene category</string>
+    <string name="search_fruits">Search Fruits</string>
+    <string name="blueberry">Blueberry</string>
+    <string name="longan">Longan</string>
+    <string name="mango">Mango</string>
+    <string name="kiwi">Kiwi</string>
+    <string name="banana">Banana</string>
+    <string name="watermelon">Watermelon</string>
+    <string name="strawberry">Strawberry</string>
+    <string name="add_longan">add_longan</string>
+    <string name="add_mango">add_mango</string>
+    <string name="add_kiwi">add_kiwi</string>
+    <string name="add_banana">add_banana</string>
+    <string name="add_watermelon">add_watermelon</string>
+    <string name="add_blueberry">add_blueberry</string>
+    <string name="add_strawberry">add_strawberry</string>
+    <string name="duck">Duck</string>
+    <string name="add_duck">add_duck</string>
+    <string name="beef">Beef</string>
+    <string name="add_beef">add_beef</string>
+    <string name="pork">Pork</string>
+    <string name="add_pork">add_pork</string>
+    <string name="add_poultry">add_poultry</string>
+    <string name="poultry">Poultry</string>
+    <string name="add_fish">add_fish</string>
+    <string name="fish">Fish</string>
+    <string name="add_salmon">add_salmon</string>
+    <string name="salmon">Salmon</string>
+    <string name="add_sausage">add_sausage</string>
+    <string name="sausage">Sausage</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="add_whippedcream">add_whippedcream</string>
+    <string name="butter">Butter</string>
+    <string name="add_butter">add_butter</string>
+    <string name="add_cream">add_cream</string>
+    <string name="add_yogurt">add_yogurt</string>
+    <string name="yogurt">Yogurt</string>
+    <string name="milk">Milk</string>
+    <string name="cream">Cream</string>
+    <string name="add_cheese">add_cheese</string>
+    <string name="add_milk">add_milk</string>
+    <string name="cheese">Cheese</string>
+    <string name="search_meat">Search Meat</string>
+    <string name="chili">Chili</string>
+    <string name="add_chili">add_chili</string>
+    <string name="cabbage">Cabbage</string>
+    <string name="add_cabbage">add_cabbage</string>
+    <string name="add_tomatoes">add_tomatoes</string>
+    <string name="search_vegetables">Search Vegetables</string>
+    <string name="tomatoes">Tomatoes</string>
+    <string name="carrot">Carrot</string>
+    <string name="add_carrot">add_carrot</string>
+    <string name="onion">Onion</string>
+    <string name="add_onion">add_onion</string>
+    <string name="add_potatos">add_potatos</string>
+    <string name="potatos">Potatos</string>
+    <string name="add_papaya">add_papaya</string>
+    <string name="papaya">Papaya</string>
+    <string name="search_bakery">Search Bakery</string>
+    <string name="search_snack">Search Snack</string>
+    <string name="search_hygiene">Search Hygiene</string>
+    <string name="search_liquor">Search Liquor</string>
+    <string name="search_beverage">Search Beverage</string>
+    <string name="search_cleaning">Search Cleaning</string>
+    <string name="search_dairy">Search Dairy</string>
+    <string name="pencil_icon">pencil_icon</string>
+    <string name="fruit_pic">fruit_pic</string>
+    <string name="fruit">Fruit</string>
+    <string name="fruitpic">fruitpic</string>
+    <string name="fruitstext">Fruits</string>
+    <string name="search_by_category">Search By Category</string>
+    <string name="textView3">fruitstext</string>
+    <string name="pics">fruitpic</string>
+    <string name="icon">icon</string>
+
+    <string-array name="categoriesList">
+        <item>Fruits</item>
+        <item>Meat</item>
+        <item>Dairy</item>
+        <item>Vegetable</item>
+        <item>Bakery</item>
+        <item>Snack</item>
+        <item>Liquor</item>
+        <item>Beverage</item>
+        <item>Cleaning</item>
+        <item>Hygiene</item>
+    </string-array>
+
+</resources>

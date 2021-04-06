@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.qc.seclass.glm">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GLM">
+<<<<<<< HEAD:Category working/GLM/app/src/main/AndroidManifest.xml
+        <activity android:name=".searchCategoryHygieneResults"></activity>
+        <activity android:name=".searchCategoryCleaningResults" />
+        <activity android:name=".searchCategoryBeverageResults" />
+        <activity android:name=".searchCategoryLiquorResults" />
+        <activity android:name=".searchCategorySnackResults" />
+        <activity android:name=".searchCategoryBakeryResults" />
+        <activity android:name=".searchCategoryVegetableResults" />
+        <activity android:name=".searchCategoryDairyResults" />
+        <activity android:name=".searchCategoryMeatResults" />
+        <activity android:name=".searchCategoryFruitsResults" />
+=======
+        <activity android:name=".AddItemWithQuantity"
+            android:label="Add Item With Quantity"></activity>
+>>>>>>> 598195e4d355d72ee377bf08d7c0d573f67e4dca:GLM/app/src/main/AndroidManifest.xml
+        <activity
+            android:name=".searchItemName"
+            android:label="Items List" />
+        <activity
+            android:name=".searchCategory"
+            android:label="Grocery List" />
+        <activity
+            android:name=".MyItems"
+            android:label="Grocery List" />
+        <activity
+            android:name=".createLists"
+            android:label="Create New Lists"
+            android:parentActivityName=".UserLists" />
+        <activity
+            android:name=".UserLists"
+            android:label="Grocery List" />
+        <activity android:name=".renamelist" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
