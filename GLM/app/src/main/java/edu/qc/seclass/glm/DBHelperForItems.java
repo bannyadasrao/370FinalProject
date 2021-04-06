@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.ListView;
-import java.util.List;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class DBHelperForItems extends SQLiteOpenHelper {
 
@@ -28,15 +28,15 @@ public class DBHelperForItems extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         String createTableStatement = "CREATE TABLE " + DB_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " TEXT, " + CATEGORY + " TEXT)";
-        //String createTableStatement = "CREATE TABLE ITEM_LIST (ID INTEGER PRIMARY KEY AUTOINCREMENT, ITEM_NAME TEXT, ITEM_CATEGORY TEXT)"
         db.execSQL(createTableStatement);
 
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Strawberries','Fruit')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Blueberries','Fruit')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Papaya','Fruit')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Watermelon','Fruit')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Cherries','Fruit')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Oranges','Fruit')");
+
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Strawberries','Fruits')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Blueberries','Fruits')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Papaya','Fruits')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Watermelon','Fruits')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Cherries','Fruits')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Oranges','Fruits')");
 
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Chicken', 'Meat')");
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Sausage','Meat')");
@@ -110,14 +110,6 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-   /* public boolean insertData(String name){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(NAME, name);
-
-        long result = db.insert(DB_TABLE,null,contentValues);
-        return result != -1; // if return -1, data won't insert.
-    }*/
     public boolean insertData(String name, String category){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -128,12 +120,11 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         return result != -1; // if return -1, data won't insert.
     }
 
-
-  public List<String> getAllItems(){
+    public List<String> getAllItems(){
         List<String> returnList = new ArrayList<String>();
-      String queryString = "SELECT * FROM " + DB_TABLE;
-        SQLiteDatabase DB = this.getReadableDatabase();
-        Cursor cursor = DB.rawQuery(queryString, null);
+        String queryString = "SELECT * FROM " + DB_TABLE;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
         if (cursor.moveToFirst()){
             do{
                 String item = cursor.getString(1);
@@ -144,14 +135,14 @@ public class DBHelperForItems extends SQLiteOpenHelper {
 
         }
         cursor.close();
-        DB.close();
+        db.close();
         return returnList;
     }
 
 
     public ArrayList<String> getItemsForMeat() {
         SQLiteDatabase db = this.getReadableDatabase();
-       String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Meat'" ;
+        String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Meat'" ;
         Cursor c = db.rawQuery(selectQuery, null);
         ArrayList<String> groceryListItems = new ArrayList<>();
         if (c.moveToFirst()){
@@ -217,7 +208,7 @@ public class DBHelperForItems extends SQLiteOpenHelper {
 
     public ArrayList<String> getItemsForFruit() {
         SQLiteDatabase db = this.getReadableDatabase();
-        String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Fruit'" ;
+        String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Fruits'" ;
         Cursor c = db.rawQuery(selectQuery, null);
         ArrayList<String> groceryListItems = new ArrayList<>();
         if (c.moveToFirst()){

@@ -1,37 +1,85 @@
 package edu.qc.seclass.glm;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import edu.qc.seclass.glm.GroceryContract.*;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
 
-    public static final String DB_NAME = "checkboxquantity.db";
-    public static final int DB_VERSION = 1;
+    private static final String DB_NAME = "checkboxQuantity";
+    private static final String TABLE_NAME = "CheckboxAndQuantity";
+    private static final int DB_VERSION = 1;
+
+    private SQLiteDatabase sqLiteDatabase;
+
+    //Table columns
+    public static  final String ID = "id";
+    public static  final String NAME = "name";
+    public static  final String QUANTITY = "quantity";
 
     public DBHelpeForCheckboxAndQuantity(@Nullable Context context) {
-        super(context, DB_NAME , null, 1);
+        super(context, DB_NAME , null, DB_VERSION);
     }
+
+    private static final String createforcheckboxandquantity = "create table " +
+            TABLE_NAME +"("+
+            ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+            NAME + " TEXT NOT NULL," +
+            QUANTITY +" TEXT NOT NULL);";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        final String createforcheckboxandquantity = "CREATE TABLE " +
-                GroceryEntry.TABLE_NAME + " (" +
-                GroceryEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                GroceryEntry.COLUMN_NAME + " TEXT NOT NULL, " +
-                GroceryEntry.COLUMN_AMOUNT + " INTEGER NOT NULL, " +
-                GroceryEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
-                ");";
-
         db.execSQL(createforcheckboxandquantity);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + GroceryEntry.TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+
+    //Add item name and quantity to Database
+    public void addNameAndQuantity(ItemsModal itemsModal){
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(DBHelpeForCheckboxAndQuantity.NAME,itemsModal.getItemName());
+        contentValues.put(DBHelpeForCheckboxAndQuantity.QUANTITY,itemsModal.getAmountOfQuantity());
+        sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.insert(DBHelpeForCheckboxAndQuantity.TABLE_NAME,null,contentValues);
+    }
+
+    public List<ItemsModal> getAllItemWithQuantity(){
+        String result = "select * from " + TABLE_NAME;
+        sqLiteDatabase =  this.getReadableDatabase();
+        List<ItemsModal> storeItems = new ArrayList<>();
+
+        Cursor cursor = sqLiteDatabase.rawQuery(result,null);
+        if(cursor.moveToFirst()){
+            do{
+                int id = Integer.parseInt(cursor.getString(0));
+                String itemName = cursor.getString(1);
+                String amountOfQuantity = cursor.getString(2);
+                storeItems.add(new ItemsModal(id,itemName,amountOfQuantity));
+            }while(cursor.moveToNext());
+        }
+        cursor.close();
+        return storeItems;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+

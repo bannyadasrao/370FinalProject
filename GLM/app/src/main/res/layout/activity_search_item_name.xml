@@ -29,9 +29,10 @@
         <Spinner
             android:id="@+id/add_category"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:entries="@array/categoriesList"></Spinner>
+            android:entries="@array/categoriesList">
+        </Spinner>
 
         <Button
             android:id="@+id/add_data"

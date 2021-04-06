@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,34 +13,51 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AddItemWithQuantity extends AppCompatActivity {
-    private SQLiteDatabase mDB;
-    public  AdapterForItems mAdapter;
-    private EditText mEditTextName;
-    private TextView mTextViewAmount;
-    private int mAmount = 0;
+
+    EditText inputItemName;
+    TextView  inputQuantity;
+    Button buttonIncrease, buttonDecrease, buttonCancel, buttonConfirm;
+    private int amount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item_with_quantity);
 
-        DBHelpeForCheckboxAndQuantity dbHelper = new DBHelpeForCheckboxAndQuantity(this);
-        mDB = dbHelper.getWritableDatabase();
+        inputItemName = findViewById(R.id.inputItemName);
+        inputQuantity = findViewById(R.id.inputQuantity);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerviewforitems);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mAdapter = new AdapterForItems(this,getAllItems());
-        recyclerView.setAdapter(mAdapter);
+        buttonIncrease = findViewById(R.id.button_increase);
+        buttonDecrease = findViewById(R.id.button_decrease);
+        buttonCancel = findViewById(R.id.cancel);
+        buttonConfirm = findViewById(R.id.confirm);
 
-        mEditTextName = findViewById(R.id.inputItemName);
-        mTextViewAmount = findViewById(R.id.inputQuantity);
+        buttonConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String stringName = inputItemName.getText().toString();
+                String quantity = inputQuantity.getText().toString();
 
-        Button buttonIncrease = findViewById(R.id.button_increase);
-        Button buttonDecrease = findViewById(R.id.button_decrease);
-        Button buttonCancel = findViewById(R.id.cancel);
-        Button buttonConfirm = findViewById(R.id.confirm);
+                if (stringName.length() <= 0 || quantity.length() <= 0) {
+                    Toast.makeText(AddItemWithQuantity.this, "Enter name and quantity", Toast.LENGTH_SHORT).show();
+                } else {
+                    DBHelpeForCheckboxAndQuantity dbHelpeForCheckboxAndQuantity = new DBHelpeForCheckboxAndQuantity(AddItemWithQuantity.this);
+                    ItemsModal itemsModal = new ItemsModal(stringName, quantity);
+                    dbHelpeForCheckboxAndQuantity.addNameAndQuantity(itemsModal);
+                    Toast.makeText(AddItemWithQuantity.this, "Add Successfully", Toast.LENGTH_SHORT).show();
+
+                    finish();
+                    startActivity(getIntent());
+
+                    Intent intent = new Intent(AddItemWithQuantity.this, MyItems.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
 
         buttonIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,49 +79,22 @@ public class AddItemWithQuantity extends AppCompatActivity {
                 cancelStatus();
             }
         });
-
-        buttonConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                confirm();
-            }
-        });
     }
 
     private void increase() {
-        mAmount++;
-        mTextViewAmount.setText(String.valueOf(mAmount));  //turn integer to string
+        amount++;
+        inputQuantity.setText(String.valueOf(amount));  //turn integer to string
     }
 
     private void decrease() {
-        if(mAmount > 0) {
-            mAmount--;
-            mTextViewAmount.setText(String.valueOf(mAmount));
+        if(amount > 0) {
+            amount--;
+            inputQuantity.setText(String.valueOf(amount));
         }
     }
 
     private void cancelStatus() {
-    }
-
-    private void confirm() {
-        if(mEditTextName.getText().toString().trim().length() == 0 || mAmount == 0){
-            return ;
-        }
-
-        String name = mEditTextName.getText().toString();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(GroceryContract.GroceryEntry.COLUMN_NAME,name);
-        contentValues.put(GroceryContract.GroceryEntry.COLUMN_AMOUNT,mAmount);
-
-        mDB.insert(GroceryContract.GroceryEntry.TABLE_NAME,null,contentValues);
-        mAdapter.swapCursor(getAllItems());
-        mEditTextName.getText().clear();
-    }
-
-    private Cursor getAllItems(){
-        return mDB.query(
-                GroceryContract.GroceryEntry.TABLE_NAME, null,null,null,null,null,
-                GroceryContract.GroceryEntry.COLUMN_TIMESTAMP + " DESC"
-        );
+        Intent i = new Intent(this,MyItems.class);
+        startActivity(i);
     }
 }

@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+
 public class searchCategoryDairyResults extends AppCompatActivity {
     DBHelperForItems db;
     List<String> allItems;

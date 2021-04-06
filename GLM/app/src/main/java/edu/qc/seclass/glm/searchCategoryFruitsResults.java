@@ -12,17 +12,19 @@ import android.widget.Toast;
 import java.util.List;
 
 public class searchCategoryFruitsResults extends AppCompatActivity {
+
     DBHelperForItems db;
     List<String> allItems;
     ListView itemList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_category_fruits_results);
+
         db = new DBHelperForItems(this);
         itemList = findViewById(R.id.itemList);
     }
-
 
     public void onStart() {
         super.onStart();

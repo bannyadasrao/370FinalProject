@@ -32,7 +32,7 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
         if (view.getId() == R.id.savecreatedlist) {
             if(namefornewlist.getText().toString().length() == 0){
                 Toast.makeText(getApplicationContext(), "Enter the list name", Toast.LENGTH_LONG).show();
-            }else{
+            }else {
                 String listName = namefornewlist.getText().toString();
                 DBHelperForList userListdatabase = new DBHelperForList(createLists.this);
                 userListdatabase.insertUserList(listName);
@@ -42,8 +42,8 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
         }
     }
     private void openActivityUserLists() {
-        Intent i = new Intent(this, UserLists.class);
-        startActivity(i);
+            Intent i = new Intent(this, UserLists.class);
+            startActivity(i);
     }
 
 }

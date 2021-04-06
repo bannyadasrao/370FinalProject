@@ -9,27 +9,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
-<<<<<<< HEAD:Category working/GLM/app/src/main/AndroidManifest.xml
         <activity android:name=".searchCategoryHygieneResults"></activity>
         <activity android:name=".searchCategoryCleaningResults" />
-        <activity android:name=".searchCategoryBeverageResults" />
         <activity android:name=".searchCategoryLiquorResults" />
         <activity android:name=".searchCategorySnackResults" />
         <activity android:name=".searchCategoryBakeryResults" />
         <activity android:name=".searchCategoryVegetableResults" />
         <activity android:name=".searchCategoryDairyResults" />
         <activity android:name=".searchCategoryMeatResults" />
+        <activity android:name=".searchCategoryBeverageResults" />
         <activity android:name=".searchCategoryFruitsResults" />
-=======
-        <activity android:name=".AddItemWithQuantity"
-            android:label="Add Item With Quantity"></activity>
->>>>>>> 598195e4d355d72ee377bf08d7c0d573f67e4dca:GLM/app/src/main/AndroidManifest.xml
+        <activity
+            android:name=".AddItemWithQuantity"
+            android:label="Add Item With Quantity" />
         <activity
             android:name=".searchItemName"
             android:label="Items List" />
         <activity
             android:name=".searchCategory"
-            android:label="Grocery List" />
+            android:label="Search By Category" />
         <activity
             android:name=".MyItems"
             android:label="Grocery List" />

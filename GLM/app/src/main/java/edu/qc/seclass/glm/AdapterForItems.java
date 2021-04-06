@@ -1,96 +1,67 @@
 package edu.qc.seclass.glm;
 
 import android.content.Context;
-import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class AdapterForItems extends RecyclerView.Adapter<AdapterForItems.ItemViewHolder> {
+import java.util.List;
 
-    private Context mContext;
-    private Cursor mCursor;
+public class AdapterForItems extends RecyclerView.Adapter<AdapterForItems.ViewHolder> {
 
-    public AdapterForItems(Context context, Cursor cursor){
-        mContext = context;
-        mCursor = cursor;
-    }
+    List<ItemsModal> items;
+    Context context;
+    DBHelpeForCheckboxAndQuantity dbHelpeForCheckboxAndQuantity;
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder{
-        public TextView nameText;
-        public TextView countText;
-//        public CheckBox checkbox;
-
-        public ItemViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            nameText = itemView.findViewById(R.id.textview_name_item);
-            countText = itemView.findViewById(R.id.textview_amount_item);
-//            checkbox = itemView.findViewById(R.id.textview_checkbox_item);
-        }
+    public AdapterForItems(List<ItemsModal> items, Context context) {
+        this.items = items;
+        this.context = context;
+        dbHelpeForCheckboxAndQuantity = new DBHelpeForCheckboxAndQuantity(context);
     }
 
     @NonNull
     @Override
-    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(mContext);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.activity_item_checkbox_quantity,parent,false);
-        return new ItemViewHolder(view);
+        ViewHolder viewHolder = new ViewHolder(view);
+
+        return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        if(!mCursor.moveToPosition(position)){
-            return;
-        }
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        final ItemsModal itemsModal = items.get(position);
 
-        String name = mCursor.getString(mCursor.getColumnIndex(GroceryContract.GroceryEntry.COLUMN_NAME));
-        int amount = mCursor.getInt(mCursor.getColumnIndex(GroceryContract.GroceryEntry.COLUMN_AMOUNT));
-
-        holder.nameText.setText(name);
-        holder.countText.setText(String.valueOf(amount));
+        holder.textview_name_item.setText(itemsModal.getItemName());
+        holder.textview_amount_item.setText(itemsModal.getAmountOfQuantity());
     }
 
     @Override
     public int getItemCount() {
-        return mCursor.getCount();
+        return items.size();
     }
 
-    public void swapCursor(Cursor newCursor){
-        if(mCursor != null){
-            mCursor.close();
-        }
+    public class ViewHolder extends RecyclerView.ViewHolder{
 
-        mCursor = newCursor;
-        if(newCursor != null){
-            notifyDataSetChanged();
+        CheckBox checkbox_item;
+        TextView textview_name_item;
+        TextView textview_amount_item;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+
+            checkbox_item = itemView.findViewById(R.id.checkbox_item);
+            textview_name_item = itemView.findViewById(R.id.textview_name_item);
+            textview_amount_item = itemView.findViewById(R.id.textview_amount_item);
+
         }
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

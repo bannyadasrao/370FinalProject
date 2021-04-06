@@ -6,158 +6,121 @@
     android:layout_height="match_parent"
     tools:context=".searchCategory">
 
-
-    <TextView
-        android:id="@+id/searchcategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:text="Search By Category"
-        android:textColor="#FF9800"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
     <ImageButton
         android:id="@+id/Fruits"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/fruits"
-        android:text="Fruit"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="82dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.017"
+        app:layout_goneMarginTop="5dp"
+        android:contentDescription="TODO" />
 
     <ImageButton
         android:id="@+id/Meat"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/meat"
-        android:text="Meat"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Fruits"
-        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
-        tools:ignore="MissingConstraints" />
-
-    <ImageButton
-        android:id="@+id/Dairy"
-        android:layout_width="200dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/dairy"
-        android:text="Dairy"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Vegetable"
-        app:layout_constraintTop_toBottomOf="@+id/Meat"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.016" />
 
     <ImageButton
         android:id="@+id/Vegetable"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/vegetables"
-        android:text="Vegetable"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/Fruits"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="82dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Fruits" />
+
+    <ImageButton
+        android:id="@+id/Dairy"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/dairy"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Meat" />
 
     <ImageButton
         android:id="@+id/Bakery"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/bakery"
-        android:text="Bakery"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/Vegetable"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="82dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Vegetable" />
+
 
     <ImageButton
         android:id="@+id/Snack"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/snack"
-        android:text="Snack"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Bakery"
-        app:layout_constraintTop_toBottomOf="@+id/Dairy"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Dairy" />
 
     <ImageButton
         android:id="@+id/Liquor"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/liquor"
-        android:text="Liquor"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/Bakery"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="82dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bakery" />
 
     <ImageButton
         android:id="@+id/Beverage"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/beverages"
-        android:text="Beverage"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Liquor"
-        app:layout_constraintTop_toBottomOf="@+id/Snack"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Snack" />
 
     <ImageButton
         android:id="@+id/Cleaning"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/cleaning"
-        android:text="Cleaning"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/Liquor"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="82dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Liquor" />
 
     <ImageButton
         android:id="@+id/Hygiene"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
         android:src="@drawable/hygiene"
-        android:text="Hygiene"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/Cleaning"
-        app:layout_constraintTop_toBottomOf="@+id/Beverage"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Beverage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

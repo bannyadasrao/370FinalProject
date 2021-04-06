@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".searchCategoryBakeryResults">
+
     <TextView
         android:id="@+id/searchcategory"
         android:layout_width="wrap_content"
@@ -36,4 +37,5 @@
         tools:ignore="MissingConstraints">
 
     </ListView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

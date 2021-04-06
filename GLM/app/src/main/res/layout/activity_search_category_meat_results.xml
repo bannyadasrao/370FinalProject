@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".searchCategoryMeatResults">
+
+
     <TextView
         android:id="@+id/searchcategory"
         android:layout_width="wrap_content"
@@ -22,7 +24,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-
     <ListView
         android:id="@+id/itemList"
         android:layout_width="373dp"
@@ -33,5 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchcategory"
         app:layout_constraintVertical_bias="0.354"
-        tools:ignore="MissingConstraints"/>
+        tools:ignore="MissingConstraints" >
+
+    </ListView>
 </androidx.constraintlayout.widget.ConstraintLayout>
