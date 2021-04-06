@@ -65,7 +65,11 @@ public class UserLists extends AppCompatActivity {
                 openActivityUserLists();
             }
         });
+<<<<<<< HEAD:Category working/GLM/app/src/main/java/edu/qc/seclass/glm/UserLists.java
     }
+=======
+        }
+>>>>>>> 598195e4d355d72ee377bf08d7c0d573f67e4dca:GLM/app/src/main/java/edu/qc/seclass/glm/UserLists.java
 
     private void openActivityUserLists() {
         Intent i = new Intent(this, MyItems.class);

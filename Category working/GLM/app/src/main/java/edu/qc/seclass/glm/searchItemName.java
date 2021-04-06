@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuCompat;
 import androidx.core.view.MenuItemCompat;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
@@ -59,19 +60,32 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+<<<<<<< HEAD:Category working/GLM/app/src/main/java/edu/qc/seclass/glm/searchItemName.java
                 //  Position = position;
                 String  text = itemlist.getItemAtPosition(position).toString();
                 Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
 
 
+=======
+              //  Position = position;
+                 String  text = itemlist.getItemAtPosition(position).toString();
+                 Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
+                 Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
+                 startActivity(i);
+>>>>>>> 598195e4d355d72ee377bf08d7c0d573f67e4dca:GLM/app/src/main/java/edu/qc/seclass/glm/searchItemName.java
             }
         });
         add_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = add_name.getText().toString();
+<<<<<<< HEAD:Category working/GLM/app/src/main/java/edu/qc/seclass/glm/searchItemName.java
                 // int position;
                 // text = itemlist.getItemAtPosition(position).toString();
+=======
+               // int position;
+               // text = itemlist.getItemAtPosition(position).toString();
+>>>>>>> 598195e4d355d72ee377bf08d7c0d573f67e4dca:GLM/app/src/main/java/edu/qc/seclass/glm/searchItemName.java
                 if(!name.equals("") && db.insertData(name, text)){
                     Toast.makeText(searchItemName.this, "Data added", Toast.LENGTH_SHORT).show();
                     add_name.setText("");
@@ -131,7 +145,11 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         text = parent.getItemAtPosition(position).toString();
+<<<<<<< HEAD:Category working/GLM/app/src/main/java/edu/qc/seclass/glm/searchItemName.java
         // Toast.makeText(searchItemName.this,"if this is what i think it is"+text,Toast.LENGTH_SHORT).show();
+=======
+       // Toast.makeText(searchItemName.this,"if this is what i think it is"+text,Toast.LENGTH_SHORT).show();
+>>>>>>> 598195e4d355d72ee377bf08d7c0d573f67e4dca:GLM/app/src/main/java/edu/qc/seclass/glm/searchItemName.java
         Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
     }
     @Override

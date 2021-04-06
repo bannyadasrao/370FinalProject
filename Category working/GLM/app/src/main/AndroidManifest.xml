@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
+<<<<<<< HEAD:Category working/GLM/app/src/main/AndroidManifest.xml
         <activity android:name=".searchCategoryHygieneResults"></activity>
         <activity android:name=".searchCategoryCleaningResults" />
         <activity android:name=".searchCategoryBeverageResults" />
@@ -19,6 +20,10 @@
         <activity android:name=".searchCategoryDairyResults" />
         <activity android:name=".searchCategoryMeatResults" />
         <activity android:name=".searchCategoryFruitsResults" />
+=======
+        <activity android:name=".AddItemWithQuantity"
+            android:label="Add Item With Quantity"></activity>
+>>>>>>> 598195e4d355d72ee377bf08d7c0d573f67e4dca:GLM/app/src/main/AndroidManifest.xml
         <activity
             android:name=".searchItemName"
             android:label="Items List" />
@@ -43,6 +48,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
