@@ -9,12 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
-        <activity android:name=".searchItemName"
-            android:label="Items List" ></activity>
+        <activity android:name=".searchCategoryHygieneResults"></activity>
+        <activity android:name=".searchCategoryCleaningResults" />
+        <activity android:name=".searchCategoryBeverageResults" />
+        <activity android:name=".searchCategoryLiquorResults" />
+        <activity android:name=".searchCategorySnackResults" />
+        <activity android:name=".searchCategoryBakeryResults" />
+        <activity android:name=".searchCategoryVegetableResults" />
+        <activity android:name=".searchCategoryDairyResults" />
+        <activity android:name=".searchCategoryMeatResults" />
+        <activity android:name=".searchCategoryFruitsResults" />
+        <activity
+            android:name=".searchItemName"
+            android:label="Items List" />
         <activity
             android:name=".searchCategory"
             android:label="Grocery List" />
-        <activity android:name=".gridLayout" />
         <activity
             android:name=".MyItems"
             android:label="Grocery List" />

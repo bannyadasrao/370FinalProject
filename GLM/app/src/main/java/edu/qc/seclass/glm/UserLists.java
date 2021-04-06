@@ -42,36 +42,33 @@ public class UserLists extends AppCompatActivity {
         createList = findViewById(R.id.createList);
         listDatabase = new DBHelperForList(this).getWritableDatabase();
         userList = findViewById(R.id.customerList);
-      //  userList = findViewById(R.id.myitemsRecycle);
-       createList.setOnClickListener(new View.OnClickListener() {
+        //  userList = findViewById(R.id.myitemsRecycle);
+        createList.setOnClickListener(new View.OnClickListener() {
             @Override
-           public void onClick(View v) {
-               Intent i = new Intent(UserLists.this,createLists.class);
-               startActivity(i);
+            public void onClick(View v) {
+                Intent i = new Intent(UserLists.this,createLists.class);
+                startActivity(i);
             }
         });
 
     }
     public void onStart() {
         super.onStart();
-         userListdatabase = new DBHelperForList(UserLists.this);
-         allList = userListdatabase.getAllList();
+        userListdatabase = new DBHelperForList(UserLists.this);
+        allList = userListdatabase.getAllList();
         ArrayAdapter userListArrayAdapter = new ArrayAdapter <String> (UserLists.this, android.R.layout.simple_list_item_1, allList);
-      //  userList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        //  userList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         userList.setAdapter(userListArrayAdapter);
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String tempList = allList.get(position).toString();
-                openActivityUserLists(tempList);
+                openActivityUserLists();
             }
         });
-        }
+    }
 
-    private void openActivityUserLists(String templist) {
-
+    private void openActivityUserLists() {
         Intent i = new Intent(this, MyItems.class);
-        i.putExtra("ListViewClickValue", templist);
         startActivity(i);
     }
 
@@ -82,47 +79,47 @@ public class UserLists extends AppCompatActivity {
         return true;
     }
 
-   public boolean onOptionsItemSelected(@NonNull MenuItem item){
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
         int id = item.getItemId();
         if(id == R.id.deletealllists){
             userListdatabase.DeleteAllList();
             onStart();
         }
-       if(id == R.id.renameselectedlists){
-           Intent i = new Intent(this, renamelist.class);
-           startActivity(i);
-       }
-       return false;
-   }
+        if(id == R.id.renameselectedlists){
+            Intent i = new Intent(this, renamelist.class);
+            startActivity(i);
+        }
+        return false;
+    }
 
 
 
-   /* public void createNewContactDialog(){
-        dialogBuilder = new AlertDialog.Builder(this);
-        final View contactPopupView = getLayoutInflater().inflate(R.layout.activity_renamelist,null);
+    /* public void createNewContactDialog(){
+         dialogBuilder = new AlertDialog.Builder(this);
+         final View contactPopupView = getLayoutInflater().inflate(R.layout.activity_renamelist,null);
 
-        listName = (EditText) contactPopupView.findViewById(R.id.namefornewlist);
-        cancel = (Button) contactPopupView.findViewById(R.id.cancellist);
-        save = (Button) contactPopupView.findViewById(R.id.savecreatedlist);
+         listName = (EditText) contactPopupView.findViewById(R.id.namefornewlist);
+         cancel = (Button) contactPopupView.findViewById(R.id.cancellist);
+         save = (Button) contactPopupView.findViewById(R.id.savecreatedlist);
 
-        dialogBuilder.setView(contactPopupView);
-        dialog = dialogBuilder.create();
-        dialog.show();
+         dialogBuilder.setView(contactPopupView);
+         dialog = dialogBuilder.create();
+         dialog.show();
 
-        save.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //define save button
-            }
-        });
-        cancel.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //define cancel button
-                dialog.dismiss();
-            }
-        });
-    }*/
+         save.setOnClickListener(new View.OnClickListener(){
+             @Override
+             public void onClick(View v) {
+                 //define save button
+             }
+         });
+         cancel.setOnClickListener(new View.OnClickListener(){
+             @Override
+             public void onClick(View v) {
+                 //define cancel button
+                 dialog.dismiss();
+             }
+         });
+     }*/
     public void goMyItemsPage(View view){
         Intent i = new Intent(this,MyItems.class);
         startActivity(i);

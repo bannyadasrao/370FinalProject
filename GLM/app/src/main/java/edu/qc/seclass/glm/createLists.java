@@ -42,8 +42,8 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
         }
     }
     private void openActivityUserLists() {
-            Intent i = new Intent(this, UserLists.class);
-            startActivity(i);
+        Intent i = new Intent(this, UserLists.class);
+        startActivity(i);
     }
 
 }
