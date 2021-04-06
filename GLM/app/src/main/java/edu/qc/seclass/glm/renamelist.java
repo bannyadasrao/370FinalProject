@@ -31,9 +31,7 @@ public class renamelist extends AppCompatActivity implements View.OnClickListene
         listDatabase = new DBHelperForList(this).getWritableDatabase();
     }
 
-
     @Override
-
     public void onClick(View view) {
 
         ////
@@ -52,7 +50,6 @@ public class renamelist extends AppCompatActivity implements View.OnClickListene
                 Intent i = new Intent(this, UserLists.class);
                 startActivity(i);
             }
-
         }
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuCompat;
 import androidx.core.view.MenuItemCompat;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
@@ -24,10 +25,8 @@ import java.util.ArrayList;
 public class searchItemName extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     DBHelperForItems db;
-    DBHelperForList DatabaseForList;
     Button add_data;
     EditText add_name;
-    String listName;
 
     ArrayList<String> listItem;
     ArrayAdapter adapter;
@@ -38,11 +37,8 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_item_name);
-        listName = getIntent().getStringExtra("Listname");
-
 
         db = new DBHelperForItems(this);
-        DatabaseForList = new DBHelperForList(this);
 
         listItem = new ArrayList<>();
 
@@ -65,21 +61,19 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
               //  Position = position;
-               String  text = itemlist.getItemAtPosition(position).toString();
+                 String  text = itemlist.getItemAtPosition(position).toString();
                  Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
-
-
+                 Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
+                 startActivity(i);
             }
         });
         add_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = add_name.getText().toString();
-                String AddingItemToList = listName + " , " + name;
                // int position;
                // text = itemlist.getItemAtPosition(position).toString();
                 if(!name.equals("") && db.insertData(name, text)){
-                    DatabaseForList.UpdateListName(listName, AddingItemToList);
                     Toast.makeText(searchItemName.this, "Data added", Toast.LENGTH_SHORT).show();
                     add_name.setText("");
                     listItem.clear();
@@ -138,6 +132,7 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         text = parent.getItemAtPosition(position).toString();
+       // Toast.makeText(searchItemName.this,"if this is what i think it is"+text,Toast.LENGTH_SHORT).show();
         Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
     }
     @Override
