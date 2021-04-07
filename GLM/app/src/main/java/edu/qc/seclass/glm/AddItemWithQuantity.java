@@ -28,21 +28,16 @@ public class AddItemWithQuantity extends AppCompatActivity {
         setContentView(R.layout.activity_add_item_with_quantity);
         Intent i= getIntent();
         String name = i.getStringExtra("itemClicked");
-       // inputItemName = findViewById(R.id.inputItemName);
         inputItemName = (TextView)findViewById(R.id.inputItemName);
         inputItemName.setText(name);
-       // setContentView(itemClicked);
         inputQuantity = findViewById(R.id.inputQuantity);
-
         buttonIncrease = findViewById(R.id.button_increase);
         buttonDecrease = findViewById(R.id.button_decrease);
         buttonCancel = findViewById(R.id.cancel);
         buttonConfirm = findViewById(R.id.confirm);
-
         buttonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // String stringName = inputItemName.getText().toString();
                 String stringName =  name;
                 String quantity = inputQuantity.getText().toString();
 

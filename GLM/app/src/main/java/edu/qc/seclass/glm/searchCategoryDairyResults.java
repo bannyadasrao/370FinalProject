@@ -34,13 +34,8 @@ public class searchCategoryDairyResults extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String text = itemList.getItemAtPosition(position).toString();
                 Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
-
-                // String strName = null;
                 i.putExtra("itemClicked", text);
-
                 startActivity(i);
-
-                // Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
             }
         });
     }

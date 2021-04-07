@@ -52,19 +52,13 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
         spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner[0].setAdapter(spinnerAdapter);
         spinner[0].setOnItemSelectedListener(this);
-
         viewData();
-
         itemlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-              //  Position = position;
                  String  text = itemlist.getItemAtPosition(position).toString();
                  Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
                  Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
-               // String strName = null;
                 i.putExtra("itemClicked", text);
 
                  startActivity(i);
@@ -74,8 +68,6 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onClick(View v) {
                 String name = add_name.getText().toString();
-               // int position;
-               // text = itemlist.getItemAtPosition(position).toString();
                 if(!name.equals("") && db.insertData(name, text)){
                     Toast.makeText(searchItemName.this, "Data added", Toast.LENGTH_SHORT).show();
                     add_name.setText("");
@@ -135,7 +127,6 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         text = parent.getItemAtPosition(position).toString();
-       // Toast.makeText(searchItemName.this,"if this is what i think it is"+text,Toast.LENGTH_SHORT).show();
         Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
     }
     @Override
