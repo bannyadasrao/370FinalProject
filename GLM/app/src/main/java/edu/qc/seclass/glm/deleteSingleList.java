@@ -29,7 +29,6 @@ public class deleteSingleList extends AppCompatActivity implements View.OnClickL
         listDatabase = new DBHelperForList(this).getWritableDatabase();
     }
 
-
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.cancelDeletetinglist) {
@@ -38,6 +37,7 @@ public class deleteSingleList extends AppCompatActivity implements View.OnClickL
         }
         else if (view.getId() == R.id.confirmDeleteList){
             if(listName.getText().toString().length() == 0){
+                //must provide a list name
                 Toast.makeText(getApplicationContext(), "Please provide the name of the list you are trying to delete", Toast.LENGTH_LONG).show();
             } else if (listName.getText().toString().length() != 0){
                 userListdatabase = new DBHelperForList(this);
