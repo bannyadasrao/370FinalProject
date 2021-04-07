@@ -58,7 +58,7 @@ public class AdapterForItems extends RecyclerView.Adapter<AdapterForItems.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            checkbox_item = itemView.findViewById(R.id.checkbox_item);
+//            checkbox_item = itemView.findViewById(R.id.checkbox);
             textview_name_item = itemView.findViewById(R.id.textview_name_item);
             textview_amount_item = itemView.findViewById(R.id.textview_amount_item);
 
