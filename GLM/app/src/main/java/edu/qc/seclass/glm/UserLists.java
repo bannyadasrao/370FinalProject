@@ -89,6 +89,13 @@ public class UserLists extends AppCompatActivity {
            Intent i = new Intent(this, renamelist.class);
            startActivity(i);
        }
+       if(id == R.id.deletesinglelists){
+          Intent i = new Intent(this, deleteSingleList.class);
+           startActivity(i);
+       }
+
+       //deleteselectedlists
+
        return false;
    }
 

@@ -8,8 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,11 +60,28 @@ public class DBHelperForList extends SQLiteOpenHelper {
     }
 
     public void DeleteList (String listName){
+
+        /*String selection = FeedEntry.COLUMN_NAME_TITLE + " LIKE ?";
+            // Specify arguments in placeholder order.
+            String[] selectionArgs = { "MyTitle" };
+            // Issue SQL statement.
+        int deletedRows = db.delete(FeedEntry.TABLE_NAME, selection, selectionArgs);*/
+
         SQLiteDatabase DB = this.getWritableDatabase();
-        String queryString = " DELETE FROM " + USER_LIST + " WHERE " + COLUMN_LIST_NAME + " = " + listName;
+        /*String queryString = " DELETE FROM " + USER_LIST + " WHERE " + COLUMN_LIST_NAME + " = " + listName;
         Cursor cursor = DB.rawQuery(queryString, null);
-        return;
+        return;*/
+
+         int result = DB.delete(USER_LIST, COLUMN_LIST_NAME + "=?", new String[]{listName});
+         if (result == 0){
+             Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();
+         }else {
+             //Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();
+         }
+         return;
     }
+
+
     public void DeleteAllList (){
         SQLiteDatabase DB = this.getWritableDatabase();
         DB.execSQL("delete from "+ USER_LIST);

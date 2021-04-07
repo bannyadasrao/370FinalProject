@@ -6,4 +6,7 @@
 
     <item android:title="Rename List"
         android:id="@+id/renameselectedlists"/>
+
+    <item android:title="Delete Single List"
+        android:id="@+id/deletesinglelists"/>
 </menu>

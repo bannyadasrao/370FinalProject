@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
-        <activity android:name=".searchCategoryHygieneResults"></activity>
+        <activity android:name=".deleteSingleList"></activity>
+        <activity android:name=".searchCategoryHygieneResults" />
         <activity android:name=".searchCategoryCleaningResults" />
         <activity android:name=".searchCategoryLiquorResults" />
         <activity android:name=".searchCategorySnackResults" />
