@@ -24,7 +24,7 @@
             android:label="Add Item With Quantity" />
         <activity
             android:name=".searchItemName"
-            android:label="Items List" />
+            android:label="Search..." />
         <activity
             android:name=".searchCategory"
             android:label="Search By Category" />
