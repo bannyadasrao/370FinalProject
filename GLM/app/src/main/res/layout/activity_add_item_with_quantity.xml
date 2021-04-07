@@ -15,12 +15,13 @@
         android:layout_centerHorizontal="true"
         android:textSize="30dp" />
 
-    <EditText
+    <TextView
         android:layout_marginTop="50dp"
         android:id="@+id/inputItemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"/>
+        android:textSize="30dp"
+        />
 
     <TextView
         android:id="@+id/textView4"

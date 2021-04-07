@@ -17,8 +17,8 @@ import android.widget.Toast;
 
 public class AddItemWithQuantity extends AppCompatActivity {
 
-    EditText inputItemName;
-    TextView  inputQuantity;
+   // EditText inputItemName;
+    TextView  inputQuantity, inputItemName;
     Button buttonIncrease, buttonDecrease, buttonCancel, buttonConfirm;
     private int amount = 0;
 
@@ -26,8 +26,12 @@ public class AddItemWithQuantity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item_with_quantity);
-
-        inputItemName = findViewById(R.id.inputItemName);
+        Intent i= getIntent();
+        String name = i.getStringExtra("itemClicked");
+       // inputItemName = findViewById(R.id.inputItemName);
+        inputItemName = (TextView)findViewById(R.id.inputItemName);
+        inputItemName.setText(name);
+       // setContentView(itemClicked);
         inputQuantity = findViewById(R.id.inputQuantity);
 
         buttonIncrease = findViewById(R.id.button_increase);
@@ -38,7 +42,8 @@ public class AddItemWithQuantity extends AppCompatActivity {
         buttonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stringName = inputItemName.getText().toString();
+               // String stringName = inputItemName.getText().toString();
+                String stringName =  name;
                 String quantity = inputQuantity.getText().toString();
 
                 if (stringName.length() <= 0 || quantity.length() <= 0) {
