@@ -6,27 +6,13 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24b5e320-54b7-4b69-af2c-10a09a7c0cd5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/AddItemWithQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/AddItemWithQuantity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBakeryResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBakeryResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBeverageResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBeverageResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryCleaningResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryCleaningResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryDairyResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryDairyResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryFruitsResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryFruitsResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryHygieneResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryHygieneResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryLiquorResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryLiquorResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryMeatResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryMeatResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategorySnackResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategorySnackResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryVegetableResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryVegetableResults.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchItemName.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchItemName.java" afterDir="false" />
-    </list>
+    <list default="true" id="24b5e320-54b7-4b69-af2c-10a09a7c0cd5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
