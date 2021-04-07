@@ -64,15 +64,12 @@ public class UserLists extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String text = userList.getItemAtPosition(position).toString();
                 openActivityUserLists(text);
-
             }
         });
         }
 
     private void openActivityUserLists(String list) {
         Intent i = new Intent(this, MyItems.class);
-        //String text = userList.getItemAtPosition(Position).toString();
-       // Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
         i.putExtra("listClicked", list);
         startActivity(i);
     }
@@ -105,37 +102,8 @@ public class UserLists extends AppCompatActivity {
    }
 
 
-
-   /* public void createNewContactDialog(){
-        dialogBuilder = new AlertDialog.Builder(this);
-        final View contactPopupView = getLayoutInflater().inflate(R.layout.activity_renamelist,null);
-
-        listName = (EditText) contactPopupView.findViewById(R.id.namefornewlist);
-        cancel = (Button) contactPopupView.findViewById(R.id.cancellist);
-        save = (Button) contactPopupView.findViewById(R.id.savecreatedlist);
-
-        dialogBuilder.setView(contactPopupView);
-        dialog = dialogBuilder.create();
-        dialog.show();
-
-        save.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //define save button
-            }
-        });
-        cancel.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                //define cancel button
-                dialog.dismiss();
-            }
-        });
-    }*/
     public void goMyItemsPage(View view){
         Intent i = new Intent(this,MyItems.class);
         startActivity(i);
     }
-
-
 }

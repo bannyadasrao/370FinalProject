@@ -23,8 +23,10 @@ public class AddItemWithQuantity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item_with_quantity);
         Intent x = getIntent();
+
         name = x.getStringExtra("itemClicked");
         listName = x.getStringExtra("listClicked");
+
         inputItemName = (TextView)findViewById(R.id.inputItemName);
         inputItemName.setText(name);
         inputQuantity = findViewById(R.id.inputQuantity);
@@ -32,6 +34,7 @@ public class AddItemWithQuantity extends AppCompatActivity {
         buttonDecrease = findViewById(R.id.button_decrease);
         buttonCancel = findViewById(R.id.cancel);
         buttonConfirm = findViewById(R.id.confirm);
+
         buttonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,17 +47,15 @@ public class AddItemWithQuantity extends AppCompatActivity {
                     DBHelpeForCheckboxAndQuantity dbHelpeForCheckboxAndQuantity = new DBHelpeForCheckboxAndQuantity(AddItemWithQuantity.this);
                     ItemsModal itemsModal = new ItemsModal(stringName, quantity, listName);
                     dbHelpeForCheckboxAndQuantity.addNameAndQuantity(itemsModal);
-                    Toast.makeText(AddItemWithQuantity.this, "Add Successfully", Toast.LENGTH_SHORT).show();
 
                     finish();
-                    startActivity(getIntent());
+                    Toast.makeText(AddItemWithQuantity.this, "Add Successfully", Toast.LENGTH_SHORT).show();
+//                    startActivity(getIntent());
 
-                    Intent intent = new Intent(AddItemWithQuantity.this, MyItems.class);
-                    startActivity(intent);
+                    backToMyItemsPage();
                 }
             }
         });
-
 
         buttonIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,6 +79,11 @@ public class AddItemWithQuantity extends AppCompatActivity {
         });
     }
 
+    private void backToMyItemsPage() {
+        Intent backitempage = new Intent(AddItemWithQuantity.this, MyItems.class);
+        startActivity(backitempage);
+    }
+
     private void increase() {
         amount++;
         inputQuantity.setText(String.valueOf(amount));  //turn integer to string
@@ -91,7 +97,7 @@ public class AddItemWithQuantity extends AppCompatActivity {
     }
 
     private void cancelStatus() {
-        Intent i = new Intent(this,MyItems.class);
-        startActivity(i);
+        Intent intent = new Intent(this,UserLists.class);
+        startActivity(intent);
     }
 }

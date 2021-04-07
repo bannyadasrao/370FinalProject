@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
         SQLiteDatabase UserListDatabase = new DBHelperForList(this).getWritableDatabase();
         SQLiteDatabase itemDatabase = new DBHelperForItems(this).getWritableDatabase();
         super.onCreate(savedInstanceState);
+
         try{
             this.getSupportActionBar().hide();
         }catch(NullPointerException e){}

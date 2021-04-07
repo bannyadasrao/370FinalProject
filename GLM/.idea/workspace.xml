@@ -24,12 +24,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24b5e320-54b7-4b69-af2c-10a09a7c0cd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_check_box.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/AdapterForItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/AdapterForItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_item_checkbox_quantity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_item_checkbox_quantity.xml" afterDir="false" />
-    </list>
+    <list default="true" id="24b5e320-54b7-4b69-af2c-10a09a7c0cd5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

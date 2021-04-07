@@ -20,6 +20,7 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_lists);
+
         namefornewlist = findViewById(R.id.namefornewlist);
         savecreatedlist = findViewById(R.id.savecreatedlist);
         savecreatedlist.setOnClickListener((View.OnClickListener) this);
@@ -29,6 +30,7 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
+
         if (view.getId() == R.id.savecreatedlist) {
             if(namefornewlist.getText().toString().length() == 0){
                 Toast.makeText(getApplicationContext(), "Enter the list name", Toast.LENGTH_LONG).show();
@@ -37,7 +39,6 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
                 DBHelperForList userListdatabase = new DBHelperForList(createLists.this);
                 userListdatabase.insertUserList(listName);
                 openActivityUserLists();
-
             }
         }
     }
@@ -45,5 +46,4 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
             Intent i = new Intent(this, UserLists.class);
             startActivity(i);
     }
-
 }

@@ -95,7 +95,6 @@ public class DBHelperForList extends SQLiteOpenHelper {
         cursor.close();
         DB.close();
         return returnList;
-
     }
 }
 

@@ -55,6 +55,7 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
         spinner[0].setAdapter(spinnerAdapter);
         spinner[0].setOnItemSelectedListener(this);
         viewData();
+
         itemlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -67,6 +68,7 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
                  startActivity(i);
             }
         });
+
         add_data.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

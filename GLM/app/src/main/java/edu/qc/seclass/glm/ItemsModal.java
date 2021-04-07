@@ -31,6 +31,7 @@ public class ItemsModal {
     public String getItemName() {
         return itemName;
     }
+
     public String getList(){
         return listname;
     }
