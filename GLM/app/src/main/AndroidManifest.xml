@@ -30,7 +30,7 @@
             android:label="Search By Category" />
         <activity
             android:name=".MyItems"
-            android:label="Grocery List" />
+            android:label="Search By Category Or Name" />
         <activity
             android:name=".createLists"
             android:label="Create New Lists"
