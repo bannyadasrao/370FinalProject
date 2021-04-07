@@ -60,18 +60,7 @@ public class DBHelperForList extends SQLiteOpenHelper {
     }
 
     public void DeleteList (String listName){
-
-        /*String selection = FeedEntry.COLUMN_NAME_TITLE + " LIKE ?";
-            // Specify arguments in placeholder order.
-            String[] selectionArgs = { "MyTitle" };
-            // Issue SQL statement.
-        int deletedRows = db.delete(FeedEntry.TABLE_NAME, selection, selectionArgs);*/
-
         SQLiteDatabase DB = this.getWritableDatabase();
-        /*String queryString = " DELETE FROM " + USER_LIST + " WHERE " + COLUMN_LIST_NAME + " = " + listName;
-        Cursor cursor = DB.rawQuery(queryString, null);
-        return;*/
-
          int result = DB.delete(USER_LIST, COLUMN_LIST_NAME + "=?", new String[]{listName});
          if (result == 0){
              Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();

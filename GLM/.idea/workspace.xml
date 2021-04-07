@@ -25,14 +25,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24b5e320-54b7-4b69-af2c-10a09a7c0cd5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/deleteSingleList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_delete_single_list.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/AddItemWithQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/AddItemWithQuantity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelperForList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelperForList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/ItemsModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/ItemsModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/MyItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/MyItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UserLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UserLists.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/itemmenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/itemmenu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/listmenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/listmenu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBakeryResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBakeryResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBeverageResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryBeverageResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryCleaningResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryCleaningResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryDairyResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryDairyResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryFruitsResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryFruitsResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryHygieneResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryHygieneResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryLiquorResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryLiquorResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryMeatResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryMeatResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategorySnackResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategorySnackResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryVegetableResults.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchCategoryVegetableResults.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchItemName.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/searchItemName.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +195,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="530" y="30" key="#app" timestamp="1617672752156">
@@ -212,33 +225,33 @@
       <screen x="0" y="25" width="1440" height="819" />
     </state>
     <state x="312" y="200" width="656" height="482" key="Downloadable.Font.Dialog.Size/0.25.1440.819@0.25.1440.819" timestamp="1617691375936" />
-    <state width="1342" height="142" key="GridCell.Tab.0.bottom" timestamp="1617769515725">
-      <screen x="0" y="25" width="1440" height="814" />
+    <state width="671" height="142" key="GridCell.Tab.0.bottom" timestamp="1617818325414">
+      <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state width="1342" height="143" key="GridCell.Tab.0.bottom/0.25.1440.813@0.25.1440.813" timestamp="1617760050469" />
     <state width="1342" height="142" key="GridCell.Tab.0.bottom/0.25.1440.814@0.25.1440.814" timestamp="1617769515725" />
-    <state width="1342" height="143" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1617759645822" />
+    <state width="671" height="142" key="GridCell.Tab.0.bottom/0.25.1440.815@0.25.1440.815" timestamp="1617818325414" />
     <state width="1342" height="208" key="GridCell.Tab.0.bottom/0.25.1440.817@0.25.1440.817" timestamp="1617755841860" />
-    <state width="1342" height="142" key="GridCell.Tab.0.center" timestamp="1617769515725">
-      <screen x="0" y="25" width="1440" height="814" />
+    <state width="671" height="142" key="GridCell.Tab.0.center" timestamp="1617818325414">
+      <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state width="1342" height="143" key="GridCell.Tab.0.center/0.25.1440.813@0.25.1440.813" timestamp="1617760050469" />
     <state width="1342" height="142" key="GridCell.Tab.0.center/0.25.1440.814@0.25.1440.814" timestamp="1617769515725" />
-    <state width="1342" height="143" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1617759645821" />
+    <state width="671" height="142" key="GridCell.Tab.0.center/0.25.1440.815@0.25.1440.815" timestamp="1617818325414" />
     <state width="1342" height="208" key="GridCell.Tab.0.center/0.25.1440.817@0.25.1440.817" timestamp="1617755841860" />
-    <state width="1342" height="142" key="GridCell.Tab.0.left" timestamp="1617769515725">
-      <screen x="0" y="25" width="1440" height="814" />
+    <state width="671" height="142" key="GridCell.Tab.0.left" timestamp="1617818325414">
+      <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state width="1342" height="143" key="GridCell.Tab.0.left/0.25.1440.813@0.25.1440.813" timestamp="1617760050468" />
     <state width="1342" height="142" key="GridCell.Tab.0.left/0.25.1440.814@0.25.1440.814" timestamp="1617769515725" />
-    <state width="1342" height="143" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1617759645821" />
+    <state width="671" height="142" key="GridCell.Tab.0.left/0.25.1440.815@0.25.1440.815" timestamp="1617818325414" />
     <state width="1342" height="208" key="GridCell.Tab.0.left/0.25.1440.817@0.25.1440.817" timestamp="1617755841859" />
-    <state width="1342" height="142" key="GridCell.Tab.0.right" timestamp="1617769515725">
-      <screen x="0" y="25" width="1440" height="814" />
+    <state width="671" height="142" key="GridCell.Tab.0.right" timestamp="1617818325414">
+      <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state width="1342" height="143" key="GridCell.Tab.0.right/0.25.1440.813@0.25.1440.813" timestamp="1617760050469" />
     <state width="1342" height="142" key="GridCell.Tab.0.right/0.25.1440.814@0.25.1440.814" timestamp="1617769515725" />
-    <state width="1342" height="143" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1617759645821" />
+    <state width="671" height="142" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1617818325414" />
     <state width="1342" height="208" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1617755841860" />
     <state x="868" y="168" width="670" height="676" key="search.everywhere.popup" timestamp="1617705718621">
       <screen x="0" y="25" width="1440" height="819" />

@@ -62,13 +62,18 @@ public class UserLists extends AppCompatActivity {
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                openActivityUserLists();
+                String text = userList.getItemAtPosition(position).toString();
+                openActivityUserLists(text);
+
             }
         });
         }
 
-    private void openActivityUserLists() {
+    private void openActivityUserLists(String list) {
         Intent i = new Intent(this, MyItems.class);
+        //String text = userList.getItemAtPosition(Position).toString();
+       // Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
+        i.putExtra("listClicked", list);
         startActivity(i);
     }
 

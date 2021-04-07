@@ -32,12 +32,14 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
     ArrayAdapter adapter;
     ListView itemlist;
     String text;
+    String listName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_item_name);
-
+        Intent x = getIntent();
+        listName = x.getStringExtra("listClicked");
         db = new DBHelperForItems(this);
 
         listItem = new ArrayList<>();
@@ -59,7 +61,8 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
                  String  text = itemlist.getItemAtPosition(position).toString();
                  Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
                  Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
-                i.putExtra("itemClicked", text);
+                 i.putExtra("itemClicked", text);
+                i.putExtra("listClicked", listName);
 
                  startActivity(i);
             }

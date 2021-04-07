@@ -16,12 +16,15 @@ public class searchCategoryMeatResults extends AppCompatActivity {
     DBHelperForItems db;
     List<String> allItems;
     ListView itemList;
+    String listName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_category_meat_results);
         db = new DBHelperForItems(this);
         itemList = findViewById(R.id.itemList);
+        Intent x= getIntent();
+        listName = x.getStringExtra("listClicked");
     }
 
     public void onStart() {
@@ -35,6 +38,7 @@ public class searchCategoryMeatResults extends AppCompatActivity {
                 String text = itemList.getItemAtPosition(position).toString();
                 Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
                 i.putExtra("itemClicked", text);
+                i.putExtra("listClicked", listName);
                 startActivity(i);
             }
         });

@@ -15,13 +15,16 @@ public class AddItemWithQuantity extends AppCompatActivity {
     TextView  inputQuantity, inputItemName;
     Button buttonIncrease, buttonDecrease, buttonCancel, buttonConfirm;
     private int amount = 1;
+    String listName;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item_with_quantity);
-        Intent i= getIntent();
-        String name = i.getStringExtra("itemClicked");
+        Intent x = getIntent();
+        name = x.getStringExtra("itemClicked");
+        listName = x.getStringExtra("listClicked");
         inputItemName = (TextView)findViewById(R.id.inputItemName);
         inputItemName.setText(name);
         inputQuantity = findViewById(R.id.inputQuantity);
@@ -39,7 +42,7 @@ public class AddItemWithQuantity extends AppCompatActivity {
                     Toast.makeText(AddItemWithQuantity.this, "Enter name and quantity", Toast.LENGTH_SHORT).show();
                 } else {
                     DBHelpeForCheckboxAndQuantity dbHelpeForCheckboxAndQuantity = new DBHelpeForCheckboxAndQuantity(AddItemWithQuantity.this);
-                    ItemsModal itemsModal = new ItemsModal(stringName, quantity);
+                    ItemsModal itemsModal = new ItemsModal(stringName, quantity, listName);
                     dbHelpeForCheckboxAndQuantity.addNameAndQuantity(itemsModal);
                     Toast.makeText(AddItemWithQuantity.this, "Add Successfully", Toast.LENGTH_SHORT).show();
 

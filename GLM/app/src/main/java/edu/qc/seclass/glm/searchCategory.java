@@ -15,11 +15,14 @@ import java.util.List;
 public class searchCategory extends AppCompatActivity implements View.OnClickListener {
 
     private ImageButton Fruit, Meat, Dairy, Vegetable, Bakery, Snack, Liquor, Beverage, Cleaning, Hygiene;
+    String listName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_category);
+        Intent x= getIntent();
+        listName = x.getStringExtra("listClicked");
 
         Fruit = findViewById(R.id.Fruits);
         Meat = findViewById(R.id.Meat);
@@ -49,36 +52,46 @@ public class searchCategory extends AppCompatActivity implements View.OnClickLis
 
         if (view.getId() == R.id.Fruits) {
             Intent i = new Intent(this, searchCategoryFruitsResults.class);
+            i.putExtra("listClicked", listName);
             startActivity(i);
         } else if (view.getId() == R.id.Meat) {
-            Intent i = new Intent(this, searchCategoryMeatResults.class);
-            startActivity(i);
+            Intent j = new Intent(this, searchCategoryMeatResults.class);
+            j.putExtra("listClicked", listName);
+            startActivity(j);
         } else if (view.getId() == R.id.Dairy) {
-            Intent i = new Intent(this, searchCategoryDairyResults.class);
-            startActivity(i);
+            Intent k = new Intent(this, searchCategoryDairyResults.class);
+            k.putExtra("listClicked", listName);
+            startActivity(k);
         } else if (view.getId() == R.id.Vegetable) {
-            Intent i = new Intent(this, searchCategoryVegetableResults.class);
-            startActivity(i);
+            Intent l = new Intent(this, searchCategoryVegetableResults.class);
+            l.putExtra("listClicked", listName);
+            startActivity(l);
         } else if (view.getId() == R.id.Bakery) {
-            Intent i = new Intent(this, searchCategoryBakeryResults.class);
-            startActivity(i);
+            Intent m = new Intent(this, searchCategoryBakeryResults.class);
+            m.putExtra("listClicked", listName);
+            startActivity(m);
         } else if (view.getId() == R.id.Snack) {
-            Intent i = new Intent(this, searchCategorySnackResults.class);
-            startActivity(i);
+            Intent n = new Intent(this, searchCategorySnackResults.class);
+            n.putExtra("listClicked", listName);
+            startActivity(n);
         } else if (view.getId() == R.id.Liquor) {
-            Intent i = new Intent(this, searchCategoryLiquorResults.class);
-            startActivity(i);
+            Intent o = new Intent(this, searchCategoryLiquorResults.class);
+            o.putExtra("listClicked", listName);
+            startActivity(o);
         } else if (view.getId() == R.id.Beverage) {
-            Intent i = new Intent(this, searchCategoryBeverageResults.class);
-            startActivity(i);
+            Intent p = new Intent(this, searchCategoryBeverageResults.class);
+            p.putExtra("listClicked", listName);
+            startActivity(p);
         } else if (view.getId() == R.id.Cleaning) {
-            Intent i = new Intent(this, searchCategoryCleaningResults.class);
-            i.putExtra("categoryClicked", "Cleaning");
-            startActivity(i);
+            Intent q = new Intent(this, searchCategoryCleaningResults.class);
+            q.putExtra("listClicked", listName);
+            q.putExtra("categoryClicked", "Cleaning");
+            startActivity(q);
         } else if (view.getId() == R.id.Hygiene) {
-            Intent i = new Intent(this, searchCategoryHygieneResults.class);
-            i.putExtra("categoryClicked", "Hygiene");
-            startActivity(i);
+            Intent r = new Intent(this, searchCategoryHygieneResults.class);
+            r.putExtra("listClicked", listName);
+            r.putExtra("categoryClicked", "Hygiene");
+            startActivity(r);
         }
     }
 }

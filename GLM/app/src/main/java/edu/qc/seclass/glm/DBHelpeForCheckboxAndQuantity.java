@@ -23,16 +23,18 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
     public static  final String ID = "id";
     public static  final String NAME = "name";
     public static  final String QUANTITY = "quantity";
+    public static  final String LISTNAME = "listname";
 
     public DBHelpeForCheckboxAndQuantity(@Nullable Context context) {
-        super(context, DB_NAME , null, DB_VERSION);
+        super(context, "checkboxQuantity.db" , null, DB_VERSION);
     }
 
     private static final String createforcheckboxandquantity = "create table " +
             TABLE_NAME +"("+
             ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
             NAME + " TEXT NOT NULL," +
-            QUANTITY +" TEXT NOT NULL);";
+            QUANTITY +" TEXT NOT NULL," +
+            LISTNAME +" TEXT NOT NULL);";
 
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -50,16 +52,24 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(DBHelpeForCheckboxAndQuantity.NAME,itemsModal.getItemName());
         contentValues.put(DBHelpeForCheckboxAndQuantity.QUANTITY,itemsModal.getAmountOfQuantity());
+        contentValues.put(DBHelpeForCheckboxAndQuantity.LISTNAME,itemsModal.getList());
         sqLiteDatabase = this.getWritableDatabase();
         sqLiteDatabase.insert(DBHelpeForCheckboxAndQuantity.TABLE_NAME,null,contentValues);
     }
 
-    public List<ItemsModal> getAllItemWithQuantity(){
-        String result = "select * from " + TABLE_NAME;
+    public List<ItemsModal> getAllItemWithQuantity(String listName){
+      //  String[] selectionArgs = { listName };
+        //String result = "select * from " + TABLE_NAME;
         sqLiteDatabase =  this.getReadableDatabase();
         List<ItemsModal> storeItems = new ArrayList<>();
+        //rawQuery("SELECT * FROM TABLE_NAME WHERE LISTNAME = ?, new String[] {listName});
+       // Cursor cursor = sqLiteDatabase.rawQuery(TABLE_NAME, LISTNAME + "=?", new String[]{listName}, null);
+       // USER_LIST, COLUMN_LIST_NAME + "=?", new String[]{listName}
+        //Cursor cursor = sqLiteDatabase.rawQuery (TABLE_NAME, LISTNAME + "=?", new String[]{listName});
+      //  Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM TABLE_NAME WHERE LISTNAME =?", new String[] {listName});
 
-        Cursor cursor = sqLiteDatabase.rawQuery(result,null);
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from CheckboxAndQuantity where listname = ?",new String[]{listName});
+       // Cursor cursor = sqLiteDatabase.rawQuery(result,null);
         if(cursor.moveToFirst()){
             do{
                 int id = Integer.parseInt(cursor.getString(0));

@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SQLiteDatabase UserListDatabase = new DBHelperForList(this).getWritableDatabase();
+        SQLiteDatabase itemDatabase = new DBHelperForItems(this).getWritableDatabase();
         super.onCreate(savedInstanceState);
         try{
             this.getSupportActionBar().hide();
