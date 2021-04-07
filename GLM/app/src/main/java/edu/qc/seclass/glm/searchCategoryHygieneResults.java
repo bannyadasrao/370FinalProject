@@ -2,6 +2,7 @@ package edu.qc.seclass.glm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,8 +33,15 @@ public class searchCategoryHygieneResults extends AppCompatActivity {
         itemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String text = parent.getItemAtPosition(position).toString();
-                Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+                String text = itemList.getItemAtPosition(position).toString();
+                Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
+
+                // String strName = null;
+                i.putExtra("itemClicked", text);
+
+                startActivity(i);
+
+                // Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
             }
         });
     }
