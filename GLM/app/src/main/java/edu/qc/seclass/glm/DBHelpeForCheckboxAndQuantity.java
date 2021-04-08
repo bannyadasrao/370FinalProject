@@ -58,15 +58,9 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
     }
 
     public List<ItemsModal> getAllItemWithQuantity(String listName){
-      //  String[] selectionArgs = { listName };
-        //String result = "select * from " + TABLE_NAME;
+
         sqLiteDatabase =  this.getReadableDatabase();
         List<ItemsModal> storeItems = new ArrayList<>();
-        //rawQuery("SELECT * FROM TABLE_NAME WHERE LISTNAME = ?, new String[] {listName});
-       // Cursor cursor = sqLiteDatabase.rawQuery(TABLE_NAME, LISTNAME + "=?", new String[]{listName}, null);
-       // USER_LIST, COLUMN_LIST_NAME + "=?", new String[]{listName}
-        //Cursor cursor = sqLiteDatabase.rawQuery (TABLE_NAME, LISTNAME + "=?", new String[]{listName});
-      //  Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM TABLE_NAME WHERE LISTNAME =?", new String[] {listName});
 
         Cursor cursor = sqLiteDatabase.rawQuery("select * from CheckboxAndQuantity where listname = ?",new String[]{listName});
        // Cursor cursor = sqLiteDatabase.rawQuery(result,null);
@@ -81,6 +75,15 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
         cursor.close();
         return storeItems;
     }
+
+
+    public void DeleteAllListItems (String nameOfListToDeleteItemsOf){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        DB.execSQL("delete from CheckboxAndQuantity where listname = ?",new String[]{nameOfListToDeleteItemsOf});
+        DB.close();
+        return;
+    }
+
 }
 
 

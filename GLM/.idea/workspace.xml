@@ -30,7 +30,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -58,7 +58,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1qjkjWaAK1peL3QmuSltiioLkpw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -73,6 +73,13 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="memory.settings.postsync.last.time.stamp" value="1617843079763" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-880203037">
@@ -177,6 +184,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="235" y="167" key="#PSD" timestamp="1617845408458">
+      <screen x="0" y="25" width="1440" height="818" />
+    </state>
+    <state x="235" y="167" key="#PSD/0.25.1440.818@0.25.1440.818" timestamp="1617845408458" />
     <state x="530" y="30" key="#app" timestamp="1617672752156">
       <screen x="0" y="25" width="1440" height="819" />
     </state>
@@ -236,6 +247,10 @@
     <state width="671" height="142" key="GridCell.Tab.0.right/0.25.1440.815@0.25.1440.815" timestamp="1617818325414" />
     <state width="1342" height="208" key="GridCell.Tab.0.right/0.25.1440.817@0.25.1440.817" timestamp="1617755841860" />
     <state width="1533" height="209" key="GridCell.Tab.0.right/0.25.1440.819@0.25.1440.819" timestamp="1617839998194" />
+    <state x="211" y="67" key="SettingsEditor" timestamp="1617851065471">
+      <screen x="0" y="25" width="1440" height="815" />
+    </state>
+    <state x="211" y="67" key="SettingsEditor/0.25.1440.815@0.25.1440.815" timestamp="1617851065471" />
     <state x="640" y="184" key="refactoring.ChangeSignatureDialog" timestamp="1617836131343">
       <screen x="0" y="25" width="1440" height="819" />
     </state>

@@ -30,6 +30,9 @@ public class UserLists extends AppCompatActivity {
     Button createList;
     List<String> allList;
     DBHelperForList userListdatabase;
+    SQLiteDatabase checkBoxDatabase;
+    DBHelpeForCheckboxAndQuantity itemAdded;
+   // DBHelperForCheckboxAndQuantity itemAdded;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class UserLists extends AppCompatActivity {
 
         createList = findViewById(R.id.createList);
         listDatabase = new DBHelperForList(this).getWritableDatabase();
+        checkBoxDatabase = new DBHelpeForCheckboxAndQuantity(this).getWritableDatabase();
         userList = (SwipeMenuListView) findViewById(R.id.customerList);
 
         createList.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +82,11 @@ public class UserLists extends AppCompatActivity {
                  // complete the delete function here
                String text = userList.getItemAtPosition(position).toString();
                userListdatabase.DeleteList (text);
+                itemAdded = new DBHelpeForCheckboxAndQuantity(UserLists.this);
+
+
+                
+               itemAdded.DeleteAllListItems(text);
 
                stateAtCurrent();
 

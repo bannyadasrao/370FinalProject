@@ -62,11 +62,11 @@ public class DBHelperForList extends SQLiteOpenHelper {
     public void DeleteList (String listName){
         SQLiteDatabase DB = this.getWritableDatabase();
          int result = DB.delete(USER_LIST, COLUMN_LIST_NAME + "=?", new String[]{listName});
-         if (result == 0){
-             Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();
-         }else {
+        // if (result == 0){
+           //  Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();
+        // }else {
              //Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();
-         }
+        // }
          return;
     }
 
