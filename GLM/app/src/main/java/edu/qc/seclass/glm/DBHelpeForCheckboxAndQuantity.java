@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.os.strictmode.SqliteObjectLeakedViolation;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
+
+    Context context;
 
     private static final String DB_NAME = "checkboxQuantity";
     private static final String TABLE_NAME = "CheckboxAndQuantity";
@@ -92,6 +95,16 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
         long result = DB.update(TABLE_NAME, contentValues, LISTNAME + "=?", new String[]{oldListName});
         return;
 
+    }
+
+    public void deleteOneRow(int row_id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        long result = db.delete(TABLE_NAME, " id=?", new String[]{String.valueOf(row_id)});
+        if(result == -1){
+            Toast.makeText(context,"Failed to delete.",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(context,"Successfully deleted.",Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

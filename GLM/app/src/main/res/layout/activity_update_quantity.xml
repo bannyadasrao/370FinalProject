@@ -5,8 +5,10 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/checkbox_item"
+    <ImageButton
+        android:id="@+id/deleteSingleItem"
+        android:src="@drawable/ic_delete"
+        android:background="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_marginLeft="10dp"/>
@@ -14,9 +16,10 @@
     <TextView
         android:id="@+id/textview_name_item"
         android:layout_width="220dp"
-        android:layout_height="60dp"
+        android:layout_height="58dp"
         android:text="This is item name"
-        android:textSize="20dp"/>
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp" />
 
     <EditText
         android:id="@+id/textview_amount_item"
@@ -30,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="55dp"
         android:layout_weight="1"
+        android:layout_marginTop="4dp"
         android:background="#FFFFFF"
         android:src="@drawable/ic_edit_24"/>
 
