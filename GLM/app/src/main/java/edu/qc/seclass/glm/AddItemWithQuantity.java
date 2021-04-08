@@ -48,11 +48,11 @@ public class AddItemWithQuantity extends AppCompatActivity {
                     ItemsModal itemsModal = new ItemsModal(stringName, quantity, listName);
                     dbHelpeForCheckboxAndQuantity.addNameAndQuantity(itemsModal);
 
-                    finish();
                     Toast.makeText(AddItemWithQuantity.this, "Add Successfully", Toast.LENGTH_SHORT).show();
+                    backToMyItemsPage();
+//                    finish();
 //                    startActivity(getIntent());
 
-                    backToMyItemsPage();
                 }
             }
         });
@@ -80,7 +80,7 @@ public class AddItemWithQuantity extends AppCompatActivity {
     }
 
     private void backToMyItemsPage() {
-        Intent backitempage = new Intent(AddItemWithQuantity.this, MyItems.class);
+        Intent backitempage = new Intent(this, MyItems.class);
         startActivity(backitempage);
     }
 

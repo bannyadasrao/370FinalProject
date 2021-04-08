@@ -64,7 +64,6 @@ public class MyItems extends AppCompatActivity {
 
     public void onStart() {
         super.onStart();
-
     }
 
     @Override

@@ -63,7 +63,7 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
                  Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
                  Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
                  i.putExtra("itemClicked", text);
-                i.putExtra("listClicked", listName);
+                 i.putExtra("listClicked", listName);
 
                  startActivity(i);
             }

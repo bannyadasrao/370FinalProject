@@ -1,14 +1,12 @@
 package edu.qc.seclass.glm;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.UserHandle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,34 +14,33 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.Toast;
+
+import com.baoyz.swipemenulistview.SwipeMenu;
+import com.baoyz.swipemenulistview.SwipeMenuCreator;
+import com.baoyz.swipemenulistview.SwipeMenuItem;
+import com.baoyz.swipemenulistview.SwipeMenuListView;
 
 import java.util.List;
 
 public class UserLists extends AppCompatActivity {
 
-    private AlertDialog.Builder dialogBuilder;
-    private AlertDialog dialog;
-    private EditText listName;
-    private Button cancel, save;
+    private static final String TAG = "UserLists";
     SQLiteDatabase listDatabase;
-    ListView userList;
-    RecyclerView mylistsRecycle;
+    SwipeMenuListView userList;
     Button createList;
     List<String> allList;
     DBHelperForList userListdatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_lists);
-        //mylistsRecycle = findViewById(R.id.myitemsRecycle);
+
         createList = findViewById(R.id.createList);
         listDatabase = new DBHelperForList(this).getWritableDatabase();
-        userList = findViewById(R.id.customerList);
-      //  userList = findViewById(R.id.myitemsRecycle);
-       createList.setOnClickListener(new View.OnClickListener() {
+        userList = (SwipeMenuListView) findViewById(R.id.customerList);
+
+        createList.setOnClickListener(new View.OnClickListener() {
             @Override
            public void onClick(View v) {
                Intent i = new Intent(UserLists.this,createLists.class);
@@ -56,9 +53,36 @@ public class UserLists extends AppCompatActivity {
         super.onStart();
          userListdatabase = new DBHelperForList(UserLists.this);
          allList = userListdatabase.getAllList();
+
         ArrayAdapter userListArrayAdapter = new ArrayAdapter <String> (UserLists.this, android.R.layout.simple_list_item_1, allList);
-      //  userList.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
         userList.setAdapter(userListArrayAdapter);
+
+        SwipeMenuCreator creator = new SwipeMenuCreator() {
+
+            @Override
+            public void create(SwipeMenu menu) {
+                SwipeMenuItem deleteItem = new SwipeMenuItem(getApplicationContext());
+                deleteItem.setWidth(170);
+                deleteItem.setIcon(R.drawable.trash_bin);
+                menu.addMenuItem(deleteItem);
+            }
+        };
+
+        // set creator
+        userList.setMenuCreator(creator);
+
+        userList.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
+
+                 // complete the delete function here
+
+
+                return false;
+            }
+        });
+
+
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -66,7 +90,7 @@ public class UserLists extends AppCompatActivity {
                 openActivityUserLists(text);
             }
         });
-        }
+    }
 
     private void openActivityUserLists(String list) {
         Intent i = new Intent(this, MyItems.class);
@@ -95,12 +119,9 @@ public class UserLists extends AppCompatActivity {
           Intent i = new Intent(this, deleteSingleList.class);
            startActivity(i);
        }
-
        //deleteselectedlists
-
        return false;
    }
-
 
     public void goMyItemsPage(View view){
         Intent i = new Intent(this,MyItems.class);
