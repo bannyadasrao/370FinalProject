@@ -76,10 +76,12 @@ public class UserLists extends AppCompatActivity {
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
 
                  // complete the delete function here
-              String text = userList.getItemAtPosition(position).toString();
+               String text = userList.getItemAtPosition(position).toString();
                userListdatabase.DeleteList (text);
 
-                return false;
+               stateAtCurrent();
+
+               return false;
             }
         });
 
@@ -91,6 +93,11 @@ public class UserLists extends AppCompatActivity {
                 openActivityUserLists(text);
             }
         });
+    }
+
+    private void stateAtCurrent() {
+        Intent current = new Intent(this,UserLists.class);
+        startActivity(current);
     }
 
     private void openActivityUserLists(String list) {
