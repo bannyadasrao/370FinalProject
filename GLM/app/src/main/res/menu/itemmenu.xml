@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="delete"
+        android:id="@+id/deleteicon"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_delete"
+        android:iconTint="@color/black"/>
 
     <item android:title="Check All Items Off"
         android:id="@+id/checkallitemsoff"/>
 
     <item android:title="Clear All Check Marks"
         android:id="@+id/clearallcheckmarks"/>
-
-    <item android:title="Delete Selected Items"
-        android:id="@+id/deleteselecteditems"/>
 
     <item android:title="Delete All Items"
         android:id="@+id/deleteallitems"/>

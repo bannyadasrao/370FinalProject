@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
+        <activity android:name=".UpdateQuantity"
+            android:label="Update Quantity" ></activity>
         <activity android:name=".searchCategoryHygieneResults" />
         <activity android:name=".searchCategoryCleaningResults" />
         <activity android:name=".searchCategoryLiquorResults" />
@@ -24,7 +26,7 @@
             android:label="Add Item With Quantity" />
         <activity
             android:name=".searchItemName"
-            android:label="Search..." />
+            android:label="Search here..." />
         <activity
             android:name=".searchCategory"
             android:label="Search By Category" />

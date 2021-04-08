@@ -1,6 +1,8 @@
 package edu.qc.seclass.glm;
 
-public class ItemsModal {
+import java.io.Serializable;
+
+public class ItemsModal implements Serializable {
 
     Integer id;
     String itemName;
