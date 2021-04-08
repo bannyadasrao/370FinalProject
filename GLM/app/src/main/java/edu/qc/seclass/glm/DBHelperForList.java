@@ -35,13 +35,7 @@ public class DBHelperForList extends SQLiteOpenHelper {
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_LIST_NAME, ListName);
-        long result =  DB.insert(USER_LIST , null, contentValues);
-        if (result == -1){
-            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(context,"Added Successfully!",Toast.LENGTH_SHORT).show();
-        }
+        DB.insert(USER_LIST , null, contentValues);
     }
 
     public void UpdateListName(String oldListName, String newListName){
@@ -49,12 +43,6 @@ public class DBHelperForList extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COLUMN_LIST_NAME, newListName);
         long result =   DB.update(USER_LIST, contentValues, COLUMN_LIST_NAME + "=?", new String[]{oldListName});
-        if (result == -1){
-            Toast.makeText(context,"Failed!",Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(context,"Updated Successfully!",Toast.LENGTH_SHORT).show();
-        }
 
         return;
     }
@@ -62,11 +50,6 @@ public class DBHelperForList extends SQLiteOpenHelper {
     public void DeleteList (String listName){
         SQLiteDatabase DB = this.getWritableDatabase();
          int result = DB.delete(USER_LIST, COLUMN_LIST_NAME + "=?", new String[]{listName});
-        // if (result == 0){
-           //  Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();
-        // }else {
-             //Toast.makeText(context,"Can not perform the action. Please make sure the list you are trying to delete exists",Toast.LENGTH_LONG).show();
-        // }
          return;
     }
 

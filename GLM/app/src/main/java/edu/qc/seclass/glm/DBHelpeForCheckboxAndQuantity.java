@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -82,6 +83,15 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
         DB.execSQL("delete from CheckboxAndQuantity where listname = ?",new String[]{nameOfListToDeleteItemsOf});
         DB.close();
         return;
+    }
+
+    public void UpdateListNameAfterRename(String oldListName, String newListName){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(LISTNAME, newListName);
+        long result = DB.update(TABLE_NAME, contentValues, LISTNAME + "=?", new String[]{oldListName});
+        return;
+
     }
 
 }

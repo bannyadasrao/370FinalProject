@@ -17,11 +17,14 @@ public class renamelist extends AppCompatActivity implements View.OnClickListene
     Button saveDeleteList;
     SQLiteDatabase listDatabase;
     DBHelperForList userListdatabase;
+    SQLiteDatabase checkBoxDatabase;
+    DBHelpeForCheckboxAndQuantity cbDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_renamelist);
+        checkBoxDatabase = new DBHelpeForCheckboxAndQuantity(this).getWritableDatabase();
         oldnameOfList = findViewById(R.id.oldlistname);
         cancellistdeletion = findViewById(R.id.cancellist);
         saveDeleteList = findViewById(R.id.savedeletelist);
@@ -47,6 +50,8 @@ public class renamelist extends AppCompatActivity implements View.OnClickListene
             } else if (newnametext.getText().toString().length() != 0 && oldnameOfList.getText().toString().length() != 0){
                 userListdatabase = new DBHelperForList(this);
                 userListdatabase.UpdateListName(oldnameOfList.getText().toString(), newnametext.getText().toString());
+                cbDatabase = new DBHelpeForCheckboxAndQuantity(this);
+                cbDatabase.UpdateListNameAfterRename(oldnameOfList.getText().toString(),newnametext.getText().toString() );
                 Intent i = new Intent(this, UserLists.class);
                 startActivity(i);
             }
