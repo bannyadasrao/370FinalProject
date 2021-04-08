@@ -76,7 +76,8 @@ public class UserLists extends AppCompatActivity {
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
 
                  // complete the delete function here
-
+              String text = userList.getItemAtPosition(position).toString();
+               userListdatabase.DeleteList (text);
 
                 return false;
             }
@@ -115,10 +116,7 @@ public class UserLists extends AppCompatActivity {
            Intent i = new Intent(this, renamelist.class);
            startActivity(i);
        }
-       if(id == R.id.deletesinglelists){
-          Intent i = new Intent(this, deleteSingleList.class);
-           startActivity(i);
-       }
+
        //deleteselectedlists
        return false;
    }
