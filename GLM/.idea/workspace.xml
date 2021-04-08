@@ -6,13 +6,18 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f88a2790-e5fe-422d-b824-1fea6b517d2a" name="Default Changelist" comment="" />
+    <list default="true" id="f88a2790-e5fe-422d-b824-1fea6b517d2a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelperForList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelperForList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UserLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UserLists.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -39,6 +44,9 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-08T17:52:46.015Z" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1617920504749" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-1837374435">
@@ -125,6 +133,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617924129540">
+      <screen x="0" y="25" width="1440" height="815" />
+    </state>
+    <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.815@0.25.1440.815" timestamp="1617924129540" />
     <state x="890" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617899445396">
       <screen x="0" y="25" width="1440" height="821" />
     </state>
@@ -145,6 +157,10 @@
       <screen x="0" y="25" width="1440" height="821" />
     </state>
     <state width="1398" height="210" key="GridCell.Tab.0.right/0.25.1440.821@0.25.1440.821" timestamp="1617900246873" />
+    <state x="211" y="67" key="SettingsEditor" timestamp="1617920520239">
+      <screen x="0" y="25" width="1440" height="815" />
+    </state>
+    <state x="211" y="67" key="SettingsEditor/0.25.1440.815@0.25.1440.815" timestamp="1617920520239" />
     <state x="817" y="170" width="670" height="676" key="search.everywhere.popup" timestamp="1617899419230">
       <screen x="0" y="25" width="1440" height="821" />
     </state>

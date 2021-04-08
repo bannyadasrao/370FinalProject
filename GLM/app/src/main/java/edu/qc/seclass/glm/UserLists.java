@@ -126,6 +126,8 @@ public class UserLists extends AppCompatActivity {
         int id = item.getItemId();
         if(id == R.id.deletealllists){
             userListdatabase.DeleteAllList();
+            itemAdded = new DBHelpeForCheckboxAndQuantity(UserLists.this);
+          itemAdded.DeleteAllEntry();
             onStart();
         }
        if(id == R.id.renameselectedlists){

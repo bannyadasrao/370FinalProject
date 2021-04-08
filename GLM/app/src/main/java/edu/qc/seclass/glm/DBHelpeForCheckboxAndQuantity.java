@@ -88,6 +88,15 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
         return;
     }
 
+    public void DeleteAllEntry (){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        //DB.execSQL("delete from "+ TABLE_NAME);
+       // DB.execSQL("delete from "+ TABLE_NAME);
+       DB.delete(TABLE_NAME, null, null);
+      DB.close();
+
+    }
+
     public void UpdateListNameAfterRename(String oldListName, String newListName){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

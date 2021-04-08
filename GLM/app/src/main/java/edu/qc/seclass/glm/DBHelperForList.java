@@ -57,6 +57,7 @@ public class DBHelperForList extends SQLiteOpenHelper {
     public void DeleteAllList (){
         SQLiteDatabase DB = this.getWritableDatabase();
         DB.execSQL("delete from "+ USER_LIST);
+
         DB.close();
         return;
     }
