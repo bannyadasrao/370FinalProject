@@ -1,14 +1,17 @@
 package edu.qc.seclass.glm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -20,7 +23,8 @@ public class MyItems extends AppCompatActivity {
 
     RecyclerView recyclerView;
     String name;
-
+    SQLiteDatabase checkBoxDatabase;
+    DBHelpeForCheckboxAndQuantity quantityChanged;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -28,6 +32,8 @@ public class MyItems extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
+        checkBoxDatabase = new DBHelpeForCheckboxAndQuantity(this).getWritableDatabase();
+        quantityChanged = new DBHelpeForCheckboxAndQuantity(MyItems.this);
 
         Intent x = getIntent();
         name = x.getStringExtra("listClicked");
@@ -72,4 +78,17 @@ public class MyItems extends AppCompatActivity {
         inflater.inflate(R.menu.itemmenu,menu);
         return true;
     }
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.deleteicon){
+            quantityChanged = new DBHelpeForCheckboxAndQuantity(MyItems.this);
+            quantityChanged.DeleteAllListItems(name);
+            Intent update = new Intent(this, UserLists.class);
+            startActivity(update);
+        }
+        
+        return false;
+    }
+
+
 }

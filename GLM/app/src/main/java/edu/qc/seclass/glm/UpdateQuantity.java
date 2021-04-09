@@ -21,7 +21,6 @@ public class UpdateQuantity extends AppCompatActivity {
     ImageButton editQuantity;
     int id;
     String itemName, listName, numberOfQuantity;
-  //  ItemsModal itemModal;
     ImageButton deleteSingleItem;
     SQLiteDatabase checkBoxDatabase;
     DBHelpeForCheckboxAndQuantity quantityChanged;
@@ -32,22 +31,14 @@ public class UpdateQuantity extends AppCompatActivity {
         setContentView(R.layout.activity_update_quantity);
         checkBoxDatabase = new DBHelpeForCheckboxAndQuantity(this).getWritableDatabase();
         quantityChanged = new DBHelpeForCheckboxAndQuantity(UpdateQuantity.this);
-
-        //Intent x= getIntent();
-       // itemModal = (ItemsModal) x.getItemsModalExtra("QUANTITY");
-       // itemModal = (ItemsModal) x.get
-        //ItemsModal itemModal = (ItemsModal) getIntent().getSerializableExtra("Editing");
         ItemsModal quantity = (ItemsModal) getIntent().getExtras().getSerializable("QUANTITY");
         itemName = quantity.getItemName();
         listName = quantity.getList();
         numberOfQuantity = quantity.getAmountOfQuantity();
-       // quantity = quantity.getAmountOfQuantity();
         id = quantity.getId();
-//        checkbox_item = findViewById(R.id.checkbox_item);
         textview_name_item = findViewById(R.id.textview_name_item);
         textview_amount_item = findViewById(R.id.textview_amount_item);
         editQuantity = findViewById(R.id.editQuantity);
-//        editQuantity = findViewById(R.id.editQuantity);
         deleteSingleItem = findViewById(R.id.deleteSingleItem);
         textview_name_item.setText(quantity.getItemName());
        textview_amount_item.setText(quantity.getAmountOfQuantity());
