@@ -9,8 +9,8 @@
     <list default="true" id="f88a2790-e5fe-422d-b824-1fea6b517d2a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelperForList.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelperForList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UserLists.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UserLists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UpdateQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UpdateQuantity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_quantity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_quantity.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,10 +133,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617924129540">
+    <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617929498084">
       <screen x="0" y="25" width="1440" height="815" />
     </state>
-    <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.815@0.25.1440.815" timestamp="1617924129540" />
+    <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.815@0.25.1440.815" timestamp="1617929498084" />
     <state x="890" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617899445396">
       <screen x="0" y="25" width="1440" height="821" />
     </state>
@@ -161,9 +161,10 @@
       <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state x="211" y="67" key="SettingsEditor/0.25.1440.815@0.25.1440.815" timestamp="1617920520239" />
-    <state x="817" y="170" width="670" height="676" key="search.everywhere.popup" timestamp="1617899419230">
-      <screen x="0" y="25" width="1440" height="821" />
+    <state x="817" y="169" width="670" height="672" key="search.everywhere.popup" timestamp="1617926147333">
+      <screen x="0" y="25" width="1440" height="815" />
     </state>
+    <state x="817" y="169" width="670" height="672" key="search.everywhere.popup/0.25.1440.815@0.25.1440.815" timestamp="1617926147333" />
     <state x="817" y="170" width="670" height="676" key="search.everywhere.popup/0.25.1440.821@0.25.1440.821" timestamp="1617899419230" />
   </component>
 </project>

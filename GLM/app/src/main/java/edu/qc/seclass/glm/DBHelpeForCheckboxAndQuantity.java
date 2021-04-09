@@ -61,6 +61,18 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
         sqLiteDatabase.insert(DBHelpeForCheckboxAndQuantity.TABLE_NAME,null,contentValues);
     }
 
+    public void updateQuantity(int id, String quantity){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(QUANTITY, quantity);
+     // long result =  DB.update(TABLE_NAME, contentValues, NAME + " = ? AND " + LISTNAME + " = ?", new String[]{itemName, listNamme });
+       // long result =  DB.update(TABLE_NAME, contentValues, NAME + " = ? AND " + LISTNAME + " = ?", new String[]{itemName, listNamme });
+        DB.update(TABLE_NAME, contentValues, ID + " = ? " ,
+                new String[]{String.valueOf(id)});
+        return;
+    }
+
+
     public List<ItemsModal> getAllItemWithQuantity(String listName){
 
         sqLiteDatabase =  this.getReadableDatabase();
@@ -90,8 +102,6 @@ public class DBHelpeForCheckboxAndQuantity extends SQLiteOpenHelper {
 
     public void DeleteAllEntry (){
         SQLiteDatabase DB = this.getWritableDatabase();
-        //DB.execSQL("delete from "+ TABLE_NAME);
-       // DB.execSQL("delete from "+ TABLE_NAME);
        DB.delete(TABLE_NAME, null, null);
       DB.close();
 
