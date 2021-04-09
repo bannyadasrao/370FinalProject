@@ -7,11 +7,6 @@
         app:showAsAction="always"
         android:icon="@drawable/ic_delete"
         android:iconTint="@color/black"/>
-
-    <item android:title="Check All Items Off"
-        android:id="@+id/checkallitemsoff"/>
-
-    <item android:title="Clear All Check Marks"
-        android:id="@+id/clearallcheckmarks"/>
+    />
 
 </menu>

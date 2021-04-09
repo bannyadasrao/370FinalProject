@@ -7,10 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f88a2790-e5fe-422d-b824-1fea6b517d2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UpdateQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UpdateQuantity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_quantity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_quantity.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/itemmenu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/itemmenu.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
