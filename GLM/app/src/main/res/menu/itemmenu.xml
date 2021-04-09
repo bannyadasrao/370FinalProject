@@ -5,7 +5,7 @@
     <item android:title="deleteAllItems"
         android:id="@+id/deleteicon"
         app:showAsAction="always"
-        android:icon="@drawable/ic_delete"
+        android:icon="@drawable/trashcan"
         android:iconTint="@color/black"/>
     />
 

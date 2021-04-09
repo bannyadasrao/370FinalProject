@@ -6,24 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".searchCategorySnackResults">
 
-    <TextView
-        android:id="@+id/searchcategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:text="Results For Snacks"
-        android:textColor="#FF9800"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
     <ListView
         android:id="@+id/itemList"
         android:layout_width="373dp"
@@ -32,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchcategory"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.354"
         tools:ignore="MissingConstraints">
 

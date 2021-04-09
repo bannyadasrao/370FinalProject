@@ -14,17 +14,19 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.util.List;
 
 public class MyItems extends AppCompatActivity {
-    Button addButton;
+    ImageButton addButton;
 
     RecyclerView recyclerView;
     String name;
     SQLiteDatabase checkBoxDatabase;
     DBHelpeForCheckboxAndQuantity quantityChanged;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -59,7 +61,7 @@ public class MyItems extends AppCompatActivity {
         Intent i = new Intent(this,searchCategory.class);
         i.putExtra("listClicked", name);
         startActivity(i);
-       // startActivity(i);
+        // startActivity(i);
     }
 
     public void goSearchItemNamePage(View view){
@@ -86,7 +88,7 @@ public class MyItems extends AppCompatActivity {
             Intent update = new Intent(this, UserLists.class);
             startActivity(update);
         }
-        
+
         return false;
     }
 

@@ -5,19 +5,32 @@
       <config />
     </shared>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="f88a2790-e5fe-422d-b824-1fea6b517d2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/DBHelpeForCheckboxAndQuantity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/MyItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/MyItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UpdateQuantity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/qc/seclass/glm/UpdateQuantity.java" afterDir="false" />
-    </list>
+    <list default="true" id="f88a2790-e5fe-422d-b824-1fea6b517d2a" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[Pixel_3a_API_30_x86]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -132,15 +145,27 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617929498084">
       <screen x="0" y="25" width="1440" height="815" />
     </state>
     <state x="399" y="237" key="#com.intellij.fileTypes.FileTypeChooser/0.25.1440.815@0.25.1440.815" timestamp="1617929498084" />
-    <state x="890" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617899445396">
+    <state x="890" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1617936916074">
       <screen x="0" y="25" width="1440" height="821" />
     </state>
-    <state x="890" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.821@0.25.1440.821" timestamp="1617899445396" />
+    <state x="890" y="202" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1440.821@0.25.1440.821" timestamp="1617936916074" />
     <state width="1398" height="210" key="GridCell.Tab.0.bottom" timestamp="1617900246873">
       <screen x="0" y="25" width="1440" height="821" />
     </state>

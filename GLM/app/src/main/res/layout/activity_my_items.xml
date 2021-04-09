@@ -6,34 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".MyItems">
 
-    <RadioButton
+
+    <!--    <RadioButton-->
+<!--        android:id="@+id/AddByCategory"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="70dp"-->
+<!--        android:layout_marginLeft="30dp"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:onClick="goSearchCategoryPage"-->
+<!--        android:text="By Category"-->
+<!--        android:textColor="#ffc93c"-->
+<!--        android:textSize="24sp"-->
+<!--        android:textStyle="bold" />-->
+
+    <!--    <RadioButton-->
+    <!--        android:id="@+id/AddByItemName"-->
+    <!--        android:layout_width="173dp"-->
+    <!--        android:layout_height="70dp"-->
+    <!--        android:layout_marginLeft="210dp"-->
+    <!--        android:textColor="#f58634"-->
+    <!--        android:onClick="goSearchItemNamePage"-->
+    <!--        android:text="By Name"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:layout_marginTop="20dp" />-->
+
+    <ImageButton
         android:id="@+id/AddByCategory"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
-        android:layout_marginLeft="30dp"
-        android:textColor="#FF9800"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:onClick="goSearchCategoryPage"
-        android:text="By Category"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp"  />
+        android:src="@drawable/categories"
+        android:textStyle="bold" />
 
-    <RadioButton
+    <ImageButton
         android:id="@+id/AddByItemName"
-        android:layout_width="173dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="210dp"
-        android:textColor="#FF9800"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
         android:onClick="goSearchItemNamePage"
-        android:text="By Name"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginTop="20dp" />
+        android:src="@drawable/buttons"
+        android:textStyle="bold" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewforitems"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/AddByItemName" />
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/AddByCategory"/>
 
 </RelativeLayout>
