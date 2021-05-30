@@ -1,13 +1,10 @@
 package edu.qc.seclass.glm;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,11 +50,9 @@ public class DBHelperForList extends SQLiteOpenHelper {
          return;
     }
 
-
     public void DeleteAllList (){
         SQLiteDatabase DB = this.getWritableDatabase();
         DB.execSQL("delete from "+ USER_LIST);
-
         DB.close();
         return;
     }
@@ -79,6 +74,19 @@ public class DBHelperForList extends SQLiteOpenHelper {
         cursor.close();
         DB.close();
         return returnList;
+    }
+
+    public boolean isTheListAlreadyExist(String listName) {
+        boolean flag = false;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM "+USER_LIST+" WHERE "+COLUMN_LIST_NAME+"=?" , new String[] {listName});
+        if (c.getCount() > 0){
+            flag = true;
+            c.close();
+            return flag;
+        }
+        c.close();
+        return flag;
     }
 }
 

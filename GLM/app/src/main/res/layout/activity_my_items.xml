@@ -6,53 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".MyItems">
 
-
-    <!--    <RadioButton-->
-<!--        android:id="@+id/AddByCategory"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:layout_marginLeft="30dp"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:onClick="goSearchCategoryPage"-->
-<!--        android:text="By Category"-->
-<!--        android:textColor="#ffc93c"-->
-<!--        android:textSize="24sp"-->
-<!--        android:textStyle="bold" />-->
-
-    <!--    <RadioButton-->
-    <!--        android:id="@+id/AddByItemName"-->
-    <!--        android:layout_width="173dp"-->
-    <!--        android:layout_height="70dp"-->
-    <!--        android:layout_marginLeft="210dp"-->
-    <!--        android:textColor="#f58634"-->
-    <!--        android:onClick="goSearchItemNamePage"-->
-    <!--        android:text="By Name"-->
-    <!--        android:textSize="24sp"-->
-    <!--        android:textStyle="bold"-->
-    <!--        android:layout_marginTop="20dp" />-->
-
-    <ImageButton
+    <RadioButton
         android:id="@+id/AddByCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
+        android:text="By Category"
+        android:textSize="25dp"
+        android:textColor="#ff7a00"
         android:onClick="goSearchCategoryPage"
-        android:src="@drawable/categories"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
-    <ImageButton
+    <RadioButton
         android:id="@+id/AddByItemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="230dp"
+        android:layout_marginLeft="225dp"
         android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
+        android:text="By Name"
+        android:textSize="25dp"
+        android:textColor="#1687a7"
         android:onClick="goSearchItemNamePage"
-        android:src="@drawable/buttons"
-        android:textStyle="bold" />
-
+        android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewforitems"

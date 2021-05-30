@@ -9,7 +9,7 @@ public class ItemsModal implements Serializable {
     String amountOfQuantity;
     String listname;
 
-    public ItemsModal(Integer id, String itemName, String amountOfQuantity) {
+    public ItemsModal(Integer id, String itemName, String amountOfQuantity, String listname) {
         this.id = id;
         this.itemName = itemName;
         this.amountOfQuantity = amountOfQuantity;
@@ -49,5 +49,4 @@ public class ItemsModal implements Serializable {
     public void setAmountOfQuantity(String amountOfQuantity) {
         this.amountOfQuantity = amountOfQuantity;
     }
-
 }

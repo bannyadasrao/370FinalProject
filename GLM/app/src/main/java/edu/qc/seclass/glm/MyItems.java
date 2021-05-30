@@ -6,21 +6,19 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.util.List;
 
 public class MyItems extends AppCompatActivity {
-    ImageButton addButton;
+    RadioButton addButton;
 
     RecyclerView recyclerView;
     String name;
@@ -34,6 +32,7 @@ public class MyItems extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
+
         checkBoxDatabase = new DBHelpeForCheckboxAndQuantity(this).getWritableDatabase();
         quantityChanged = new DBHelpeForCheckboxAndQuantity(MyItems.this);
 
@@ -61,7 +60,6 @@ public class MyItems extends AppCompatActivity {
         Intent i = new Intent(this,searchCategory.class);
         i.putExtra("listClicked", name);
         startActivity(i);
-        // startActivity(i);
     }
 
     public void goSearchItemNamePage(View view){
@@ -82,15 +80,19 @@ public class MyItems extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.deleteicon){
-            quantityChanged = new DBHelpeForCheckboxAndQuantity(MyItems.this);
-            quantityChanged.DeleteAllListItems(name);
-            Intent update = new Intent(this, UserLists.class);
-            startActivity(update);
-        }
+        switch (id){
+            case (R.id.deleteAllItems):
+                quantityChanged = new DBHelpeForCheckboxAndQuantity(MyItems.this);
+                quantityChanged.DeleteAllListItems(name);
+                Intent update = new Intent(this, UserLists.class);
+                startActivity(update);
+                break;
 
+            case (R.id.goBack):
+                Intent goback = new Intent(this,UserLists.class);
+                startActivity(goback);
+                break;
+        }
         return false;
     }
-
-
 }

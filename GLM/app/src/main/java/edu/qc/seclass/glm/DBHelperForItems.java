@@ -16,20 +16,21 @@ public class DBHelperForItems extends SQLiteOpenHelper {
     public static final String ID = "ID";
     public static final String NAME = "ITEM_NAME";
     public static final String CATEGORY = "ITEM_CATEGORY";
-
+    //private SQLiteDatabase db = this.getReadableDatabase();
+     //db = this.getReadableDatabase();
     private Context context;
 
     public DBHelperForItems(Context context){
         super(context, DB_NAME, null, 1);
         this.context = context;
-
     }
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
         String createTableStatement = "CREATE TABLE " + DB_TABLE + " (" + ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + NAME + " TEXT, " + CATEGORY + " TEXT)";
         db.execSQL(createTableStatement);
-
 
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Strawberries','Fruits')");
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Blueberries','Fruits')");
@@ -72,12 +73,6 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Hershey','Snack')");
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Ferrero Rocher','Snack')");
 
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Wine','Liquor')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Heineken','Liquor')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Beer','Liquor')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Soju','Liquor')");
-        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Tequila','Liquor')");
-
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Coca Cola','Beverage')");
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Tropicana Orange juice','Beverage')");
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Pepsi','Beverage')");
@@ -102,6 +97,12 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Face Wash','Hygiene')");
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Mouth Wash','Hygiene')");
         db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Toothpaste','Hygiene')");
+
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Baby Powder','Others')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Shoes','Others')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Fork','Others')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Ipad','Others')");
+        db.execSQL("INSERT INTO " + DB_TABLE + "(" + NAME + "," + CATEGORY + ") VALUES ('Cup','Others')");
     }
 
     @Override
@@ -117,7 +118,7 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         contentValues.put(CATEGORY, category);
 
         long result = db.insert(DB_TABLE,null,contentValues);
-        return result != -1; // if return -1, data won't insert.
+        return result != -1;
     }
 
     public List<String> getAllItems(){
@@ -139,7 +140,6 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         return returnList;
     }
 
-
     public ArrayList<String> getItemsForMeat() {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Meat'" ;
@@ -155,7 +155,6 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         c.close();
         return groceryListItems;
     }
-
 
     public ArrayList<String> getItemsForVegetable() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -188,7 +187,6 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         c.close();
         return groceryListItems;
     }
-
 
     public ArrayList<String> getItemsForDairy() {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -237,21 +235,7 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         c.close();
         return groceryListItems;
     }
-    public ArrayList<String> getItemsForLiquor() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Liquor'" ;
-        Cursor c = db.rawQuery(selectQuery, null);
-        ArrayList<String> groceryListItems = new ArrayList<>();
-        if (c.moveToFirst()){
-            do {
-                String item = c.getString(1);
 
-                groceryListItems.add(item);
-            } while(c.moveToNext());
-        }
-        c.close();
-        return groceryListItems;
-    }
     public ArrayList<String> getItemsForBeverage() {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Beverage'" ;
@@ -267,6 +251,7 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         c.close();
         return groceryListItems;
     }
+
     public ArrayList<String> getItemsForCleaning() {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Cleaning'" ;
@@ -282,9 +267,26 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         c.close();
         return groceryListItems;
     }
+
     public ArrayList<String> getItemsForHygiene() {
         SQLiteDatabase db = this.getReadableDatabase();
         String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Hygiene'" ;
+        Cursor c = db.rawQuery(selectQuery, null);
+        ArrayList<String> groceryListItems = new ArrayList<>();
+        if (c.moveToFirst()){
+            do {
+                String item = c.getString(1);
+
+                groceryListItems.add(item);
+            } while(c.moveToNext());
+        }
+        c.close();
+        return groceryListItems;
+    }
+
+    public ArrayList<String> getItemsForOthers() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT  * FROM " + DB_TABLE + " WHERE " + CATEGORY + " = 'Others'" ;
         Cursor c = db.rawQuery(selectQuery, null);
         ArrayList<String> groceryListItems = new ArrayList<>();
         if (c.moveToFirst()){
@@ -312,5 +314,14 @@ public class DBHelperForItems extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query,null);
 
         return cursor;
+    }
+
+
+    public boolean isItemAleadyExists(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT * FROM "+DB_TABLE+" WHERE "+NAME+"=?" , new String[] {name});
+        boolean exists = c.getCount() > 0;
+        c.close();
+        return exists;
     }
 }

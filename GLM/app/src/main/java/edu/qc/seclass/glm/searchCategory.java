@@ -1,26 +1,25 @@
 package edu.qc.seclass.glm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class searchCategory extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageButton Fruit, Meat, Dairy, Vegetable, Bakery, Snack, Liquor, Beverage, Cleaning, Hygiene;
+    private ImageButton Fruit, Meat, Dairy, Vegetable, Bakery, Snack, Beverage, Cleaning, Hygiene, Others;
     String listName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_category);
+
         Intent x= getIntent();
         listName = x.getStringExtra("listClicked");
 
@@ -30,10 +29,10 @@ public class searchCategory extends AppCompatActivity implements View.OnClickLis
         Vegetable = findViewById(R.id.Vegetable);
         Bakery = findViewById(R.id.Bakery);
         Snack = findViewById(R.id.Snack);
-        Liquor = findViewById(R.id.Liquor);
         Beverage = findViewById(R.id.Beverage);
         Cleaning = findViewById(R.id.Cleaning);
         Hygiene = findViewById(R.id.Hygiene);
+        Others = findViewById(R.id.Others);
 
         Fruit.setOnClickListener((View.OnClickListener) this);
         Meat.setOnClickListener((View.OnClickListener) this);
@@ -41,10 +40,10 @@ public class searchCategory extends AppCompatActivity implements View.OnClickLis
         Vegetable.setOnClickListener((View.OnClickListener) this);
         Bakery.setOnClickListener((View.OnClickListener) this);
         Snack.setOnClickListener((View.OnClickListener) this);
-        Liquor.setOnClickListener((View.OnClickListener) this);
         Beverage.setOnClickListener((View.OnClickListener) this);
         Cleaning.setOnClickListener((View.OnClickListener) this);
         Hygiene.setOnClickListener((View.OnClickListener) this);
+        Others.setOnClickListener((View.OnClickListener) this);
     }
 
     @Override
@@ -74,10 +73,6 @@ public class searchCategory extends AppCompatActivity implements View.OnClickLis
             Intent n = new Intent(this, searchCategorySnackResults.class);
             n.putExtra("listClicked", listName);
             startActivity(n);
-        } else if (view.getId() == R.id.Liquor) {
-            Intent o = new Intent(this, searchCategoryLiquorResults.class);
-            o.putExtra("listClicked", listName);
-            startActivity(o);
         } else if (view.getId() == R.id.Beverage) {
             Intent p = new Intent(this, searchCategoryBeverageResults.class);
             p.putExtra("listClicked", listName);
@@ -92,6 +87,30 @@ public class searchCategory extends AppCompatActivity implements View.OnClickLis
             r.putExtra("listClicked", listName);
             r.putExtra("categoryClicked", "Hygiene");
             startActivity(r);
+        } else if (view.getId() == R.id.Others) {
+            Intent o = new Intent(this, searchCategoryOthersResults.class);
+            o.putExtra("listClicked", listName);
+            startActivity(o);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.categorymenu, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.goBack){
+            Intent i = new Intent(this,MyItems.class);
+            i.putExtra("listClicked", listName);
+            startActivity(i);
+        }
+        return false;
+    }
 }
+
+
+

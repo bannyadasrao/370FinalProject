@@ -1,12 +1,13 @@
 package edu.qc.seclass.glm;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,7 +25,6 @@ import java.util.List;
 
 public class UserLists extends AppCompatActivity {
 
-    private static final String TAG = "UserLists";
     SQLiteDatabase listDatabase;
     SwipeMenuListView userList;
     Button createList;
@@ -32,7 +32,6 @@ public class UserLists extends AppCompatActivity {
     DBHelperForList userListdatabase;
     SQLiteDatabase checkBoxDatabase;
     DBHelpeForCheckboxAndQuantity itemAdded;
-   // DBHelperForCheckboxAndQuantity itemAdded;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,12 +50,12 @@ public class UserLists extends AppCompatActivity {
                startActivity(i);
             }
         });
-
     }
+
     public void onStart() {
         super.onStart();
-         userListdatabase = new DBHelperForList(UserLists.this);
-         allList = userListdatabase.getAllList();
+        userListdatabase = new DBHelperForList(UserLists.this);
+        allList = userListdatabase.getAllList();
 
         ArrayAdapter userListArrayAdapter = new ArrayAdapter <String> (UserLists.this, android.R.layout.simple_list_item_1, allList);
         userList.setAdapter(userListArrayAdapter);
@@ -65,6 +64,12 @@ public class UserLists extends AppCompatActivity {
 
             @Override
             public void create(SwipeMenu menu) {
+
+                SwipeMenuItem renameItem = new SwipeMenuItem(getApplicationContext());
+                renameItem.setWidth(170);
+                renameItem.setIcon(R.drawable.rename);
+                menu.addMenuItem(renameItem);
+
                 SwipeMenuItem deleteItem = new SwipeMenuItem(getApplicationContext());
                 deleteItem.setWidth(170);
                 deleteItem.setIcon(R.drawable.trash_bin);
@@ -72,28 +77,31 @@ public class UserLists extends AppCompatActivity {
             }
         };
 
-        // set creator
         userList.setMenuCreator(creator);
 
         userList.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
+                switch (index){
+                    case 0:
+                        String listName = userList.getItemAtPosition(position).toString();
+                        Intent i = new Intent(UserLists.this, renamelist.class);
+                        i.putExtra("listClicked", listName);
+                        startActivity(i);
+                        break;
+                    case 1:
+                        String text = userList.getItemAtPosition(position).toString();
+                        userListdatabase.DeleteList (text);
+                        itemAdded = new DBHelpeForCheckboxAndQuantity(UserLists.this);
+                        itemAdded.DeleteAllListItems(text);
 
-                 // complete the delete function here
-               String text = userList.getItemAtPosition(position).toString();
-               userListdatabase.DeleteList (text);
-                itemAdded = new DBHelpeForCheckboxAndQuantity(UserLists.this);
-
-
-                
-               itemAdded.DeleteAllListItems(text);
-
-               stateAtCurrent();
-
+                        stateAtCurrent();
+                        break;
+                }
                return false;
             }
-        });
 
+        });
 
         userList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -122,20 +130,11 @@ public class UserLists extends AppCompatActivity {
         return true;
     }
 
-   public boolean onOptionsItemSelected(@NonNull MenuItem item){
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
         int id = item.getItemId();
-        if(id == R.id.deletealllists){
-            userListdatabase.DeleteAllList();
-            itemAdded = new DBHelpeForCheckboxAndQuantity(UserLists.this);
-          itemAdded.DeleteAllEntry();
-            onStart();
-        }
-       if(id == R.id.renameselectedlists){
-           Intent i = new Intent(this, renamelist.class);
-           startActivity(i);
+        if(id == R.id.deleteAllLists){
+            confirmDeleteAllLists();
        }
-
-       //deleteselectedlists
        return false;
    }
 
@@ -143,4 +142,26 @@ public class UserLists extends AppCompatActivity {
         Intent i = new Intent(this,MyItems.class);
         startActivity(i);
     }
+
+    public void confirmDeleteAllLists() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to delete all lists?");
+        builder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                userListdatabase.DeleteAllList();
+                itemAdded = new DBHelpeForCheckboxAndQuantity(UserLists.this);
+                itemAdded.DeleteAllEntry();
+                onStart();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.create().show();
+    }
+
 }

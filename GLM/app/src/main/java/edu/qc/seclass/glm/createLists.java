@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.content.Intent;
-import android.view.View;
+
 public class createLists extends AppCompatActivity implements View.OnClickListener{
 
     EditText namefornewlist;
@@ -30,18 +30,22 @@ public class createLists extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-
+        DBHelperForList userListdatabase = new DBHelperForList(createLists.this);
         if (view.getId() == R.id.savecreatedlist) {
             if(namefornewlist.getText().toString().length() == 0){
-                Toast.makeText(getApplicationContext(), "Enter the list name", Toast.LENGTH_LONG).show();
-            }else {
+                Toast.makeText(getApplicationContext(), "Enter the list name. ", Toast.LENGTH_LONG).show();
+            }else if (userListdatabase.isTheListAlreadyExist(namefornewlist.getText().toString()) == false){
                 String listName = namefornewlist.getText().toString();
-                DBHelperForList userListdatabase = new DBHelperForList(createLists.this);
                 userListdatabase.insertUserList(listName);
                 openActivityUserLists();
+            }else{
+                Toast.makeText(createLists.this, "This List already exists. ", Toast.LENGTH_SHORT).show();
+                openActivityUserLists();
             }
+
         }
     }
+
     private void openActivityUserLists() {
             Intent i = new Intent(this, UserLists.class);
             startActivity(i);

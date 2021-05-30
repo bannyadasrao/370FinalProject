@@ -31,10 +31,10 @@
         <item>Vegetable</item>
         <item>Bakery</item>
         <item>Snack</item>
-        <item>Liquor</item>
         <item>Beverage</item>
         <item>Cleaning</item>
         <item>Hygiene</item>
+        <item>Others</item>
     </string-array>
 
 </resources>

@@ -15,7 +15,7 @@
 
     <TextView
         android:id="@+id/textview_name_item"
-        android:layout_width="220dp"
+        android:layout_width="190dp"
         android:layout_height="58dp"
         android:text="This is item name"
         android:textSize="20dp"
@@ -23,8 +23,11 @@
 
     <EditText
         android:id="@+id/textview_amount_item"
-        android:layout_width="30dp"
+        android:layout_width="60dp"
         android:layout_height="60dp"
+        android:singleLine="true"
+        android:inputType="number"
+        android:digits="0123456789"
         android:text="n"
         android:textSize="20dp"/>
 

@@ -22,11 +22,20 @@
         android:text="Add Item"
         android:textSize="45dp" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/point"
+        android:layout_marginTop="215dp"
+        android:layout_marginBottom="18dp"/>
+
     <TextView
-        android:layout_marginTop="225dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginBottom="18dp"
         android:id="@+id/inputItemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="90dp"
         android:textSize="30dp" />
 
     <TextView
@@ -34,39 +43,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/inputItemName"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="18dp"
         android:text="Amount:"
         android:textSize="25dp" />
 
-    <TextView
+    <EditText
         android:id="@+id/inputQuantity"
-        android:layout_width="130dp"
-        android:layout_height="55dp"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
         android:layout_below="@id/inputItemName"
-        android:layout_marginLeft="170dp"
+        android:layout_marginLeft="140dp"
         android:text="1"
+        android:singleLine="true"
+        android:inputType="number"
+        android:digits="0123456789"
         android:textAlignment="center"
         android:textSize="50sp" />
-
-    <Button
-        android:id="@+id/button_decrease"
-        android:layout_width="40dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/inputItemName"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="5dp"
-        android:text="-"
-        android:textSize="25dp"/>
-
-    <Button
-        android:id="@+id/button_increase"
-        android:layout_width="40dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/inputItemName"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="5dp"
-        android:text="+"
-        android:textSize="25dp"/>
 
     <Button
         android:id="@+id/cancel"
@@ -79,7 +71,7 @@
         android:paddingBottom="20dp"
         android:paddingLeft="38dp"
         android:paddingRight="38dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="45dp"
         android:layout_alignParentEnd="false"/>
 
     <Button
@@ -93,12 +85,12 @@
         android:paddingBottom="20dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="45dp"
         android:layout_alignParentEnd="true"/>
 
     <ImageView
         android:layout_width="195dp"
-        android:layout_height="337dp"
+        android:layout_height="330dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"

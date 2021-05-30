@@ -1,20 +1,26 @@
 package edu.qc.seclass.glm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class AddItemWithQuantity extends AppCompatActivity {
 
-   // EditText inputItemName;
-    TextView  inputQuantity, inputItemName;
-    Button buttonIncrease, buttonDecrease, buttonCancel, buttonConfirm;
-    private int amount = 1;
+    TextView  inputItemName;
+    EditText inputQuantity;
+    Button buttonCancel, buttonConfirm;
     String listName;
     String name;
 
@@ -30,44 +36,25 @@ public class AddItemWithQuantity extends AppCompatActivity {
         inputItemName = (TextView)findViewById(R.id.inputItemName);
         inputItemName.setText(name);
         inputQuantity = findViewById(R.id.inputQuantity);
-        buttonIncrease = findViewById(R.id.button_increase);
-        buttonDecrease = findViewById(R.id.button_decrease);
         buttonCancel = findViewById(R.id.cancel);
         buttonConfirm = findViewById(R.id.confirm);
 
         buttonConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String stringName =  name;
+                DBHelpeForCheckboxAndQuantity dbHelpeForCheckboxAndQuantity = new DBHelpeForCheckboxAndQuantity(AddItemWithQuantity.this);
                 String quantity = inputQuantity.getText().toString();
-
-                if (stringName.length() <= 0 || quantity.length() <= 0) {
+                ItemsModal itemsModal = new ItemsModal(name, quantity, listName);
+                if (name.length() <= 0 || quantity.length() <= 0) {
                     Toast.makeText(AddItemWithQuantity.this, "Enter name and quantity", Toast.LENGTH_SHORT).show();
-                } else {
-                    DBHelpeForCheckboxAndQuantity dbHelpeForCheckboxAndQuantity = new DBHelpeForCheckboxAndQuantity(AddItemWithQuantity.this);
-                    ItemsModal itemsModal = new ItemsModal(stringName, quantity, listName);
+                } else if (dbHelpeForCheckboxAndQuantity.isItemAlreadyInTheList(itemsModal) == false){
                     dbHelpeForCheckboxAndQuantity.addNameAndQuantity(itemsModal);
-
-                    Toast.makeText(AddItemWithQuantity.this, "Add Successfully", Toast.LENGTH_SHORT).show();
                     backToMyItemsPage();
-//                    finish();
-//                    startActivity(getIntent());
-
                 }
-            }
-        });
-
-        buttonIncrease.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                increase();
-            }
-        });
-
-        buttonDecrease.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                decrease();
+                else{
+                    Toast.makeText(AddItemWithQuantity.this, "Item already exists in the list", Toast.LENGTH_SHORT).show();
+                    backToMyItemsPage();
+                }
             }
         });
 
@@ -81,23 +68,13 @@ public class AddItemWithQuantity extends AppCompatActivity {
 
     private void backToMyItemsPage() {
         Intent backitempage = new Intent(this, MyItems.class);
+        backitempage.putExtra("listClicked", listName);
         startActivity(backitempage);
     }
 
-    private void increase() {
-        amount++;
-        inputQuantity.setText(String.valueOf(amount));  //turn integer to string
-    }
-
-    private void decrease() {
-        if(amount > 1) {
-            amount--;
-            inputQuantity.setText(String.valueOf(amount));
-        }
-    }
-
     private void cancelStatus() {
-        Intent intent = new Intent(this,UserLists.class);
+        Intent intent = new Intent(this,MyItems.class);
+        intent.putExtra("listClicked", listName);
         startActivity(intent);
     }
 }

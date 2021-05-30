@@ -80,17 +80,6 @@
         app:layout_constraintTop_toBottomOf="@+id/Dairy" />
 
     <ImageButton
-        android:id="@+id/Liquor"
-        android:layout_width="200dp"
-        android:layout_height="130dp"
-        android:background="#FFFFFF"
-        android:src="@drawable/liquor"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Bakery" />
-
-    <ImageButton
         android:id="@+id/Beverage"
         android:layout_width="200dp"
         android:layout_height="130dp"
@@ -98,8 +87,8 @@
         android:src="@drawable/beverages"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Snack" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Bakery" />
 
     <ImageButton
         android:id="@+id/Cleaning"
@@ -109,8 +98,8 @@
         android:src="@drawable/cleaning"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Liquor" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Snack" />
 
     <ImageButton
         android:id="@+id/Hygiene"
@@ -120,7 +109,19 @@
         android:src="@drawable/hygiene"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Beverage" />
+
+    <ImageButton
+        android:id="@+id/Others"
+        android:layout_width="200dp"
+        android:layout_height="130dp"
+        android:background="#FFFFFF"
+        android:src="@drawable/others"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Cleaning" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

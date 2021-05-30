@@ -1,9 +1,8 @@
 package edu.qc.seclass.glm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.MenuCompat;
 import androidx.core.view.MenuItemCompat;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -33,11 +32,13 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
     ListView itemlist;
     String text;
     String listName;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_item_name);
+
         Intent x = getIntent();
         listName = x.getStringExtra("listClicked");
         db = new DBHelperForItems(this);
@@ -47,7 +48,6 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
         add_data = findViewById(R.id.add_data);
         add_name = findViewById(R.id.add_name);
         itemlist = findViewById(R.id.itemlist);
-
 
         final Spinner[] spinner = {findViewById(R.id.add_category)};
         ArrayAdapter<CharSequence> spinnerAdapter = ArrayAdapter.createFromResource(this,R.array.categoriesList, android.R.layout.simple_spinner_item);
@@ -59,27 +59,32 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
         itemlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                 String  text = itemlist.getItemAtPosition(position).toString();
-                 Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
-                 Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
-                 i.putExtra("itemClicked", text);
-                 i.putExtra("listClicked", listName);
+                String  text = itemlist.getItemAtPosition(position).toString();
+                //  Toast.makeText(searchItemName.this,""+text,Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(view.getContext(),AddItemWithQuantity.class);
+                i.putExtra("itemClicked", text);
+                i.putExtra("listClicked", listName);
 
-                 startActivity(i);
+                startActivity(i);
             }
         });
 
         add_data.setOnClickListener(new View.OnClickListener() {
+            DBHelperForItems dbHelpeForitems = new DBHelperForItems(searchItemName.this);
             @Override
             public void onClick(View v) {
-                String name = add_name.getText().toString();
-                if(!name.equals("") && db.insertData(name, text)){
-                    Toast.makeText(searchItemName.this, "Data added", Toast.LENGTH_SHORT).show();
+                name = add_name.getText().toString();
+                if (name.length() == 0 ){
+                    Toast.makeText(searchItemName.this," Please Provide item name. ", Toast.LENGTH_SHORT).show();
+                }
+              else  if (dbHelpeForitems.isItemAleadyExists(name) == false){
+                    db.insertData(name, text);
+                    Toast.makeText(searchItemName.this, "Item added", Toast.LENGTH_SHORT).show();
                     add_name.setText("");
                     listItem.clear();
                     viewData();
                 }else{
-                    Toast.makeText(searchItemName.this,"Data not added", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(searchItemName.this," Item not added, it might already exist in the list", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -106,7 +111,6 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
         MenuItem searchItem = menu.findItem(R.id.item_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
 
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -129,10 +133,19 @@ public class searchItemName extends AppCompatActivity implements AdapterView.OnI
         return super.onCreateOptionsMenu(menu);
     }
 
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.goBack){
+            Intent i = new Intent(this,MyItems.class);
+            i.putExtra("listClicked", listName);
+            startActivity(i);
+        }
+        return false;
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         text = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
     }
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

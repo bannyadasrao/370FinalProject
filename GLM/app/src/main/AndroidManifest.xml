@@ -9,28 +9,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GLM">
-        <activity android:name=".UpdateQuantity"
-            android:label="Update Quantity" ></activity>
-        <activity android:name=".searchCategoryHygieneResults"
-            android:label="Results For Hygiene"/>
-        <activity android:name=".searchCategoryCleaningResults"
-            android:label="Results For Cleaning"/>
-        <activity android:name=".searchCategoryLiquorResults"
-            android:label="Results For Liquor"/>
-        <activity android:name=".searchCategorySnackResults"
-            android:label="Results For Snack"/>
-        <activity android:name=".searchCategoryBakeryResults"
-            android:label="Results For Bakery"/>
-        <activity android:name=".searchCategoryVegetableResults"
-            android:label="Results For Vegetables"/>
-        <activity android:name=".searchCategoryDairyResults"
-            android:label="Results For Dairy"/>
-        <activity android:name=".searchCategoryMeatResults"
-            android:label="Results For Meat"/>
-        <activity android:name=".searchCategoryBeverageResults"
-            android:label="Results For Beverages"/>
-        <activity android:name=".searchCategoryFruitsResults"
-            android:label="Results For Fruits"/>
+        <activity android:name=".searchCategoryOthersResults"
+            android:label="Results For Others">
+        </activity>
+        <activity
+            android:name=".UpdateQuantity"
+            android:label="Update Quantity" />
+        <activity
+            android:name=".searchCategoryHygieneResults"
+            android:label="Results For Hygiene" />
+        <activity
+            android:name=".searchCategoryCleaningResults"
+            android:label="Results For Cleaning" />
+        <activity
+            android:name=".searchCategorySnackResults"
+            android:label="Results For Snack" />
+        <activity
+            android:name=".searchCategoryBakeryResults"
+            android:label="Results For Bakery" />
+        <activity
+            android:name=".searchCategoryVegetableResults"
+            android:label="Results For Vegetables" />
+        <activity
+            android:name=".searchCategoryDairyResults"
+            android:label="Results For Dairy" />
+        <activity
+            android:name=".searchCategoryMeatResults"
+            android:label="Results For Meat" />
+        <activity
+            android:name=".searchCategoryBeverageResults"
+            android:label="Results For Beverages" />
+        <activity
+            android:name=".searchCategoryFruitsResults"
+            android:label="Results For Fruits" />
         <activity
             android:name=".AddItemWithQuantity"
             android:label="Add Item With Quantity" />
@@ -42,7 +53,7 @@
             android:label="Search By Category" />
         <activity
             android:name=".MyItems"
-            android:label="Search By Category Or Name" />
+            android:label="Search Options"/>
         <activity
             android:name=".createLists"
             android:label="Create New Lists"
@@ -50,7 +61,9 @@
         <activity
             android:name=".UserLists"
             android:label="Grocery List" />
-        <activity android:name=".renamelist" />
+        <activity
+            android:name=".renamelist"
+            android:label="Rename List" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

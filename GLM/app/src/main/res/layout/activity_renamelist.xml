@@ -36,13 +36,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newnametext" />
 
-    <EditText
+    <TextView
         android:id="@+id/oldlistname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="405dp"
+        android:layout_height="50dp"
         android:layout_marginTop="50dp"
         android:autofillHints=""
-        android:hint="Enter Old List Name"
         android:inputType="textShortMessage"
         android:textAlignment="center"
         android:textSize="24sp"
